@@ -12,7 +12,7 @@ public class MainActivity extends BaseActivity implements IMainView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        //小飞真丑
     }
 
     @Override
