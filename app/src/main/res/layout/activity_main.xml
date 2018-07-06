@@ -4,8 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:background="#a1a1"
     tools:context=".view.activity.MainActivity">
 
+    <include
+       layout="@layout/include_layout" />
 
+    <com.hjm.bottomtabbar.BottomTabBar
+        android:id="@+id/main_btb"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="@dimen/y50"></com.hjm.bottomtabbar.BottomTabBar>
 </RelativeLayout>
