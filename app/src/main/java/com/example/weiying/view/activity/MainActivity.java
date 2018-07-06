@@ -22,6 +22,7 @@ public class MainActivity extends BaseActivity implements IMainView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
@@ -37,7 +38,7 @@ public class MainActivity extends BaseActivity implements IMainView {
                 .setFontSize(14)
                 .setTabPadding(4, 6, 10)
                 .setChangeColor(Color.RED, Color.DKGRAY)
-                //.setTabBarBackgroundResource(R.drawable.bottom_bg)
+                .setTabBarBackgroundResource(R.drawable.bottom_bg)
                 .isShowDivider(true)  //是否包含分割线
                 .addTabItem("精选", R.mipmap.found_select, R.mipmap.found, SelectedFragment.class)
                 .addTabItem("专题", R.mipmap.special_select, R.mipmap.special, SpecialFragment.class)
