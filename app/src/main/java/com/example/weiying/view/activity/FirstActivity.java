@@ -6,6 +6,9 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.ScaleAnimation;
 import android.widget.LinearLayout;
 
 import com.example.weiying.R;
@@ -29,6 +32,11 @@ public class FirstActivity extends AppCompatActivity {
         Resources resources = getBaseContext().getResources();
         Drawable cur = resources.getDrawable(array[index]);
         bg.setBackgroundDrawable(cur);
+
+        Animation alphaAnimation = new AlphaAnimation(1.0f, 0.0f);
+        alphaAnimation.setDuration(2000);//设置动画持续时间为500毫秒
+        alphaAnimation.setFillAfter(false);//设置动画结束后保持当前的位置（即不返回到动画开始前的位置）
+        bg.startAnimation(alphaAnimation);
 
         final Intent it = new Intent(this, MainActivity.class); //你要转向的Activity
         Timer timer = new Timer();
