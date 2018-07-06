@@ -23,9 +23,9 @@ public class FirstActivity extends AppCompatActivity {
 
         LinearLayout bg = findViewById(R.id.bg);
 
-        int array[] = {R.drawable.bg,R.drawable.bg_blue,R.drawable.bg_colorful};
+        int array[] = {R.drawable.timg1,R.drawable.timg2,R.drawable.timg3,R.drawable.timg4,R.drawable.timg5,R.drawable.timg6,R.drawable.timg7,R.drawable.timg8};
         Random rnd = new Random();
-        int index = rnd.nextInt(2);
+        int index = rnd.nextInt(7);
         Resources resources = getBaseContext().getResources();
         Drawable cur = resources.getDrawable(array[index]);
         bg.setBackgroundDrawable(cur);
