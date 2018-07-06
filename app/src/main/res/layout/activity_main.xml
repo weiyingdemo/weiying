@@ -4,29 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:background="#a1a1"
     tools:context=".view.activity.MainActivity">
 
-    <TextView
-        android:layout_width="@dimen/x150"
-        android:layout_height="@dimen/y80"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="108dp"
-        android:text="Hello World!"
-        android:textSize="@dimen/y30" />
+    <include
+       layout="@layout/include_layout" />
 
-    <ImageView
-        android:layout_width="@dimen/x100"
-        android:layout_height="@dimen/y50"
-        android:layout_centerInParent="true"
-        android:src="@mipmap/ic_launcher" />
-
-    <TextView
-        android:layout_width="@dimen/x100"
-        android:layout_height="@dimen/y50"
+    <com.hjm.bottomtabbar.BottomTabBar
+        android:id="@+id/main_btb"
+        android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="121dp"
-        android:text="name" />
+        android:layout_height="@dimen/y50"></com.hjm.bottomtabbar.BottomTabBar>
 </RelativeLayout>
