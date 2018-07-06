@@ -23,6 +23,7 @@ public class RetrofitUntils {
                 .addInterceptor(httpLoggingInterceptor)
                 .build();
         retrofit = new Retrofit.Builder()
+                .client(build)
                 .baseUrl(Constant.baseUrl)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
