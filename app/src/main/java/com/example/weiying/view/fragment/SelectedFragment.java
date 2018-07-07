@@ -18,6 +18,7 @@ public class SelectedFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View inflate = inflater.inflate(R.layout.selected_layout, container, false);
+
         return inflate;
     }
 

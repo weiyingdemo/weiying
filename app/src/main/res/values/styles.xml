@@ -6,6 +6,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-
+    </style>
+    <style name="ClubToolbar" parent="Widget.AppCompat.Toolbar">
+        <!-- 设置该属性解决空白部分-->
+        <item name="contentInsetStart">16dp</item>
+        <item name="contentInsetEnd">16dp</item>
     </style>
 </resources>
