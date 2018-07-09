@@ -17,8 +17,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <meta-data android:name="android.notch_support" android:value="true"/>
-        <activity android:name=".view.activity.MainActivity"/>
+
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" />
+
+        <activity android:name=".view.activity.MainActivity" />
+        <activity android:name=".view.activity.CollectionActivity"></activity>
     </application>
 
 </manifest>

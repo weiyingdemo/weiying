@@ -1,5 +1,6 @@
 package com.example.weiying.view.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -120,6 +121,7 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
         mLinearSetting = (LinearLayout) findViewById(R.id.linear_setting);
         mLinearSetting.setOnClickListener(this);
         mLinearTheme = (LinearLayout) findViewById(R.id.linear_theme);
+        ;
         mLinearTheme.setOnClickListener(this);
         mLinearAbout = (LinearLayout) findViewById(R.id.linear_about);
         mLinearAbout.setOnClickListener(this);
@@ -141,21 +143,22 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.linear_collection:
+            case R.id.linear_collection://收藏
+                startActivity(new Intent(MainActivity.this, CollectionActivity.class));
                 break;
-            case R.id.linear_download:
+            case R.id.linear_download://下载
                 break;
-            case R.id.linear_welfare:
+            case R.id.linear_welfare://福利
                 break;
-            case R.id.linear_share:
+            case R.id.linear_share://分享
                 break;
-            case R.id.linear_suggest:
+            case R.id.linear_suggest://建议
                 break;
-            case R.id.linear_setting:
+            case R.id.linear_setting://设置
                 break;
-            case R.id.linear_theme:
+            case R.id.linear_theme://主题
                 break;
-            case R.id.linear_about:
+            case R.id.linear_about://关于
                 break;
         }
     }
