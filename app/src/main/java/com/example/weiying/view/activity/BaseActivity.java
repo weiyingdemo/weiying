@@ -26,7 +26,7 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         initBaseView();
         initData();
     }
-
+    //
     private void initNoBar() {
         if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.KITKAT){
             Window window = getWindow();
