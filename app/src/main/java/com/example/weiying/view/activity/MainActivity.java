@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.weiying.R;
 import com.example.weiying.presenter.BasePresenter;
 import com.example.weiying.view.fragment.FindFragment;
+import com.example.weiying.view.fragment.LiveBroadcastFragment;
 import com.example.weiying.view.fragment.MineFragment;
 import com.example.weiying.view.fragment.SelectedFragment;
 import com.example.weiying.view.fragment.SpecialFragment;
@@ -62,6 +63,7 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
                 .isShowDivider(true)  //是否包含分割线
                 .addTabItem("精选", R.mipmap.found_select, R.mipmap.found, SelectedFragment.class)
                 .addTabItem("专题", R.mipmap.special_select, R.mipmap.special, SpecialFragment.class)
+                .addTabItem("直播", R.mipmap.fancy_select, R.mipmap.fancy, LiveBroadcastFragment.class)
                 .addTabItem("发现", R.mipmap.fancy_select, R.mipmap.fancy, FindFragment.class)
                 .addTabItem("我的", R.mipmap.my_select, R.mipmap.my, MineFragment.class)
                 .setOnTabChangeListener(new BottomTabBar.OnTabChangeListener() {

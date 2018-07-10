@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.weiying">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MyFresco"
         android:allowBackup="true"
@@ -23,7 +25,8 @@
             android:value="true" />
 
         <activity android:name=".view.activity.MainActivity" />
-        <activity android:name=".view.activity.CollectionActivity"></activity>
+        <activity android:name=".view.activity.CollectionActivity" />
+        <activity android:name=".view.activity.SearchActivity"></activity>
     </application>
 
 </manifest>
