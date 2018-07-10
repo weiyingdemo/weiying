@@ -85,7 +85,7 @@ public class SelectedFragment extends Fragment implements ISelectedView, SwipeRe
         selected_banner.start();
 
         //请求数据
-        List<SelectedBeans.RetBean.ListBean.ChildListBean> childListBeans = list.get(3).getChildList();
+        List<SelectedBeans.RetBean.ListBean.ChildListBean> childListBeans = list.get(2).getChildList();
         beans.addAll(childListBeans);
         //加载数据
         SelectedRcyAdapter selectedRcyAdapter = new SelectedRcyAdapter(getActivity(), beans);
