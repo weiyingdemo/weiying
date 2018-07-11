@@ -55,3 +55,4 @@ public class SpecialListAdapter extends RecyclerView.Adapter {
         }
     }
 }
+
