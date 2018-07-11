@@ -1,6 +1,5 @@
 package com.example.weiying.model.utils;
 
-import com.example.weiying.model.bean.FindBean;
 import com.example.weiying.model.bean.SelectedBeans;
 import com.example.weiying.model.bean.SpecialListBean;
 
@@ -18,6 +17,12 @@ public interface RetrofitApi {
     //首页接口
     @GET("homePageApi/homePage.do")
     Observable<SelectedBeans> getSelected();
+
+    //专题频道列表
+    @POST("columns/getVideoList.do")
+    @FormUrlEncoded
+    Observable<SpecialListBean> getSpecialList(@Field("catalogId")String catalogId);
+
 
 
     //发现
