@@ -3,7 +3,8 @@ package com.example.weiying.presenter;
 import android.util.Log;
 
 import com.example.weiying.model.bean.FindBean;
-import com.example.weiying.model.https.RetrofitUntils;
+
+import com.example.weiying.model.https.RetrofitUtils;
 import com.example.weiying.view.interfaces.IFindview;
 
 import java.util.List;
@@ -16,10 +17,10 @@ import io.reactivex.schedulers.Schedulers;
 import retrofit2.http.Field;
 
 public class FindPresenter extends BasePresenter<IFindview> {
-    private final RetrofitUntils instance;
+    private final RetrofitUtils instance;
 
     public FindPresenter(){
-        instance = RetrofitUntils.getInstance();
+        instance = RetrofitUtils.getInstance();
     }
 
     public void showfind(String catalogId,int pnum){
