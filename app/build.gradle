@@ -70,4 +70,5 @@ dependencies {
     implementation 'org.greenrobot:greendao-generator:3.2.2'
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
 
+
 }

@@ -12,17 +12,38 @@ import android.view.animation.ScaleAnimation;
 import android.widget.LinearLayout;
 
 import com.example.weiying.R;
+import com.example.weiying.presenter.BasePresenter;
 
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class FirstActivity extends AppCompatActivity {
+public class FirstActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first);
+        //setContentView(R.layout.activity_first);
+
+    }
+
+    @Override
+    protected int setLayout() {
+        return R.layout.activity_first;
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    BasePresenter setPresenter() {
+        return null;
+    }
+
+    @Override
+    protected void initView() {
 
         LinearLayout bg = findViewById(R.id.bg);
 
