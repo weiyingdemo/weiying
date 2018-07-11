@@ -1,12 +1,7 @@
 package com.example.weiying.presenter;
 
-import android.content.Context;
-import android.util.Log;
-import android.widget.Toast;
-
 import com.example.weiying.model.bean.SelectedBeans;
-import com.example.weiying.model.https.RetrofitUntils;
-import com.example.weiying.view.interfaces.IBaseView;
+import com.example.weiying.model.https.RetrofitUtils;
 import com.example.weiying.view.interfaces.ISelectedView;
 
 import io.reactivex.Observable;
@@ -20,10 +15,10 @@ import io.reactivex.schedulers.Schedulers;
  */
 public class SelectedPresenter extends BasePresenter<ISelectedView> {
 
-    private final RetrofitUntils instance;
+    private final RetrofitUtils instance;
 
     public SelectedPresenter() {
-        instance = RetrofitUntils.getInstance();
+        instance = RetrofitUtils.getInstance();
     }
 
     //加载数据

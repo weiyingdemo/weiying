@@ -1,16 +1,16 @@
 package com.example.weiying.presenter;
 
-import com.example.weiying.model.https.RetrofitUntils;
+import com.example.weiying.model.https.RetrofitUtils;
 
 /**
  * Created by nyj on 2018/7/5.
  */
 public class MainPresenter extends BasePresenter {
 
-    private final RetrofitUntils instance;
+    private final RetrofitUtils instance;
 
     public MainPresenter(){
-        instance = RetrofitUntils.getInstance();
+        instance = RetrofitUtils.getInstance();
     }
     //加载数据的方法
     public void loadData(){

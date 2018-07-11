@@ -27,7 +27,8 @@
         <activity android:name=".view.activity.MainActivity" />
         <activity android:name=".view.activity.CollectionActivity" />
         <activity android:name=".view.activity.SearchActivity" />
-        <activity android:name=".view.activity.ListActivity"></activity>
+        <activity android:name=".view.activity.ListActivity" />
+        <activity android:name=".view.activity.SpecialListActivity"></activity>
     </application>
 
 </manifest>
