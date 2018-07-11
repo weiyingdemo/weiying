@@ -19,6 +19,7 @@ import com.example.weiying.model.bean.SelectedBeans;
 import com.example.weiying.presenter.SelectedPresenter;
 
 import com.example.weiying.view.activity.SpecialListActivity;
+import com.example.weiying.view.adapter.SpecialAdapter;
 import com.example.weiying.view.interfaces.ISelectedView;
 
 import java.util.List;
