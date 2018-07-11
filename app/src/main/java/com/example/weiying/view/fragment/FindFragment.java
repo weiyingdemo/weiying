@@ -38,6 +38,7 @@ public class FindFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View inflate = inflater.inflate(R.layout.find_layout, container, false);
 
+
         return inflate;
     }
 
