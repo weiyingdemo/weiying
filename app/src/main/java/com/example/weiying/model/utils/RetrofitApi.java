@@ -1,4 +1,4 @@
-package com.example.weiying.model.untils;
+package com.example.weiying.model.utils;
 
 import com.example.weiying.model.bean.FindBean;
 import com.example.weiying.model.bean.SelectedBeans;
