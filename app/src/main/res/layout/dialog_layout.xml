@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x50"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/x30"
+            android:layout_height="@dimen/y30"
+            android:src="@mipmap/my_select" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x40"
+            android:text="关于我们"
+            android:layout_marginTop="@dimen/y5"
+            android:textColor="#ff00"
+            android:textSize="@dimen/y13" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x50"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="博客:"
+            android:textColor="#ff00"
+            android:textSize="@dimen/y13" />
+
+        <TextView
+            android:id="@+id/dialog_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x35"
+            android:text="jiankeufo"
+            android:textColor="#ff00"
+            android:textSize="@dimen/y13" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x50"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Github:"
+            android:textColor="#ff00"
+            android:textSize="@dimen/y13" />
+
+        <TextView
+            android:id="@+id/dialog_t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x20"
+            android:text="ghost"
+            android:textColor="#ff00"
+            android:textSize="@dimen/y13" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dilog_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x200"
+        android:layout_marginTop="@dimen/y20"
+        android:text="关闭"
+        android:textColor="#ff00"
+        android:textSize="@dimen/y13" />
+</LinearLayout>
