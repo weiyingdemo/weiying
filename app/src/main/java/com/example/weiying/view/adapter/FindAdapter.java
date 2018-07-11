@@ -18,15 +18,17 @@ import com.example.weiying.model.custom.GlideRoundTransform;
 import com.example.weiying.model.custom.RoundImageView;
 import com.example.weiying.view.activity.DetailsActivity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FindAdapter extends RecyclerView.Adapter {
 
 
-    List<FindBean.RetBean.ListBean> list;
+    ArrayList<FindBean.RetBean.ListBean> list;
     Context context ;
     String mediaId = null;
-    public FindAdapter(List<FindBean.RetBean.ListBean> list, Context context) {
+
+    public FindAdapter(ArrayList<FindBean.RetBean.ListBean> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -34,13 +36,8 @@ public class FindAdapter extends RecyclerView.Adapter {
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
             View view = LayoutInflater.from(context).inflate(R.layout.find_item,parent,false);
-
             return new MyViewHolder(view);
-
-
-
     }
 
     @Override
@@ -48,6 +45,7 @@ public class FindAdapter extends RecyclerView.Adapter {
 
 
             MyViewHolder h= (MyViewHolder) holder;
+            Log.e("adapter_find",list.get(position).getTitle());
             h.finditem_title.setText(list.get(position).getTitle());
             h.finditem_maggess.setText(list.get(position).getDescription());
             Glide.with(context)

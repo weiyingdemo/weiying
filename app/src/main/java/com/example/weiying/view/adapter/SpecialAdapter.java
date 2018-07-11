@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.weiying.R;
 import com.example.weiying.model.bean.SelectedBeans;
+import com.example.weiying.model.bean.SpecialListBean;
 
 import java.util.List;
 
