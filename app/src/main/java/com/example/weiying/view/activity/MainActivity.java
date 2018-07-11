@@ -1,8 +1,11 @@
 package com.example.weiying.view.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.weiying.R;
@@ -12,8 +15,8 @@ import com.example.weiying.view.fragment.MineFragment;
 import com.example.weiying.view.fragment.SelectedFragment;
 import com.example.weiying.view.fragment.SpecialFragment;
 import com.example.weiying.view.interfaces.IMainView;
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.hjm.bottomtabbar.BottomTabBar;
-
 
 public class MainActivity extends BaseActivity implements IMainView {
 
@@ -39,7 +42,7 @@ public class MainActivity extends BaseActivity implements IMainView {
                 .setFontSize(14)
                 .setTabPadding(4, 6, 10)
                 .setChangeColor(Color.RED, Color.DKGRAY)
-          //  .setTabBarBackgroundResource(R.drawable.bottom_bg)
+                //.setTabBarBackgroundResource(R.drawable.bottom_bg)
                 .isShowDivider(true)  //是否包含分割线
                 .addTabItem("精选", R.mipmap.found_select, R.mipmap.found, SelectedFragment.class)
                 .addTabItem("专题", R.mipmap.special_select, R.mipmap.special, SpecialFragment.class)
