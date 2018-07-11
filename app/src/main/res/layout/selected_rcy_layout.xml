@@ -7,7 +7,8 @@
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/rcy_sdv"
-        android:layout_width="@dimen/x271"
+        android:layout_width="@dimen/x278"
+
         android:layout_height="@dimen/x122" />
 
     <TextView
