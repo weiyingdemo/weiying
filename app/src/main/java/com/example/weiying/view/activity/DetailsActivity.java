@@ -14,14 +14,14 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+        Intent intent = getIntent();
+        String mediaId = intent.getStringExtra("mediaId");
+
     }
 
 
 
-    public static void start(Context context, DetailsBean bean) {
-        Intent starter = new Intent(context, DetailsActivity.class);
-      //  starter.putExtra("bean", bean);
-        context.startActivity(starter);
-    }
+
+
 
 }

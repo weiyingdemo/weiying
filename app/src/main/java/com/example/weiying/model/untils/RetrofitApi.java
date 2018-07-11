@@ -28,5 +28,9 @@ public interface RetrofitApi {
     @POST("columns/getVideoList.do")
     Observable<FindBean> showfind(@Field("catalogId") String catalogId, @Field("pnum") int pnum);
 
-
+    //详情接口
+    //http://api.svipmovie.com/front/videoDetailApi/videoDetail.do
+    @FormUrlEncoded
+    @POST("videoDetailApi/videoDetail.do")
+    Observable<FindBean> showDetails(@Field("mediaId") String mediaId);
 }
