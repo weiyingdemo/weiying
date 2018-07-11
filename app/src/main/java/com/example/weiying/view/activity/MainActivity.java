@@ -16,7 +16,7 @@ import com.example.weiying.view.fragment.MineFragment;
 import com.example.weiying.view.fragment.SelectedFragment;
 import com.example.weiying.view.fragment.SpecialFragment;
 import com.example.weiying.view.interfaces.IMainView;
-import com.facebook.drawee.view.SimpleDraweeView;
+
 import com.hjm.bottomtabbar.BottomTabBar;
 
 public class MainActivity extends BaseActivity implements IMainView {
@@ -37,6 +37,9 @@ public class MainActivity extends BaseActivity implements IMainView {
 
     @Override
     protected void initData() {
+        FindFragment findFragment = new FindFragment();
+
+
         //底部导航栏
         mMainBtb.init(getSupportFragmentManager())
                 .setImgSize(80, 80)

@@ -1,5 +1,7 @@
 package com.example.weiying.view.activity;
 
+
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -10,6 +12,9 @@ import android.widget.TextView;
 
 import com.example.weiying.R;
 import com.example.weiying.presenter.BasePresenter;
+
+
+
 
 public class CollectionActivity extends BaseActivity implements View.OnClickListener {
 

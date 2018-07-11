@@ -6,4 +6,14 @@
     <color name="holo_green_dark">#ff669900</color>
     <color name="darker_gray">#aaa</color>
     <color name="white">#ffffffff</color>
+
+
+    <color name="fen"> #EFCEE8</color>
+    <color name="fu"> #F3D7B5</color>
+    <color name="bai"> #FDFFDF</color>
+    <color name="qing">#DAF9CA</color>
+    <color name="fen1"> #F3D7B5</color>
+
+
+
 </resources>
