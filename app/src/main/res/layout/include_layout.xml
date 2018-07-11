@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/include_relative"
     android:layout_width="match_parent"
     android:layout_height="@dimen/y51"
-    android:background="#F54337"
-   >
+    android:background="#F54337">
 
     <ImageView
         android:id="@+id/inclu_back"
@@ -12,8 +12,8 @@
         android:layout_alignBottom="@+id/inclu_titles"
         android:layout_alignParentStart="true"
         android:layout_marginStart="22dp"
-        android:visibility="invisible"
-        android:src="@mipmap/back" />
+        android:src="@mipmap/back"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/inclu_delete"
@@ -24,8 +24,8 @@
         android:layout_marginBottom="12dp"
         android:layout_marginEnd="25dp"
         android:text="删除"
-        android:visibility="invisible"
-        android:textSize="@dimen/x14" />
+        android:textSize="@dimen/x14"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/inclu_titles"

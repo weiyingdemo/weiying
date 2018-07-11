@@ -9,7 +9,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <ScrollView
+
+        <com.example.weiying.GradationScrollView
+            android:id="@+id/selected_sv"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -17,6 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
 
 
                 <com.youth.banner.Banner
@@ -61,7 +64,7 @@
                 </RelativeLayout>
 
             </LinearLayout>
-        </ScrollView>
+        </com.example.weiying.GradationScrollView>
     </android.support.v4.widget.SwipeRefreshLayout>
 
     <RelativeLayout
@@ -91,4 +94,7 @@
             android:textSize="@dimen/y12" />
 
     </RelativeLayout>
+    <include layout="@layout/include_layout"
+
+        />
 </RelativeLayout>
