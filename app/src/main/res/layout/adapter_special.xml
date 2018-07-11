@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/y8"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/special_imgview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/y50"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="@dimen/x141"
+            android:layout_height="@dimen/y19"
+            android:layout_alignBottom="@+id/special_imgview"
+            android:layout_centerHorizontal="true"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/special_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="热点资讯"
+                android:textColor="#fff"
+                android:textSize="@dimen/y10" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
