@@ -1,7 +1,7 @@
 package com.example.weiying.model.untils;
 
-import com.example.weiying.model.bean.FindBean;
 import com.example.weiying.model.bean.SelectedBeans;
+import com.example.weiying.model.bean.SpecialListBean;
 
 
 import java.util.Map;
@@ -23,10 +23,9 @@ public interface RetrofitApi {
     @GET("homePageApi/homePage.do")
     Observable<SelectedBeans> getSelected();
 
-    //发现接口
+    //专题
     @FormUrlEncoded
     @POST("columns/getVideoList.do")
-    Observable<FindBean> showfind(@Field("catalogId") String catalogId, @Field("pnum") int pnum);
-
+    Observable<SpecialListBean> getSpecialList(@Field("catalogId") String catalogId);
 
 }
