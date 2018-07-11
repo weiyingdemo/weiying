@@ -45,7 +45,7 @@ public class SpecialFragment extends Fragment implements ISelectedView {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        //专题的频道展示
+        //专题的首页展示
         SelectedPresenter selectedPresenter = new SelectedPresenter();
         selectedPresenter.attachView(this);
         selectedPresenter.loadDataSelected();
@@ -53,8 +53,8 @@ public class SpecialFragment extends Fragment implements ISelectedView {
 
     @Override
     public void onSuccess(SelectedBeans selectedBeans) {
-        //拿到专题频道的数据
         final List<SelectedBeans.RetBean.ListBean> list = selectedBeans.getRet().getList();
+
         //适配器
         SpecialAdapter specialAdapter = new SpecialAdapter(getActivity(), list);
         special_recycler.setAdapter(specialAdapter);
