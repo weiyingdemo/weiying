@@ -45,8 +45,8 @@ public class RetrofitUtils {
     }
 
     //接口供调用
-    public com.example.weiying.model.untils.RetrofitApi getApi() {
+    public com.example.weiying.model.utils.RetrofitApi getApi() {
 
-        return retrofit.create(com.example.weiying.model.untils.RetrofitApi.class);
+        return retrofit.create(com.example.weiying.model.utils.RetrofitApi.class);
     }
 }
