@@ -1,5 +1,10 @@
 package com.example.weiying.view.activity;
 
+<<<<<<< HEAD
+import android.app.Activity;
+
+public class CollectionActivity extends Activity {
+=======
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -65,4 +70,5 @@ public class CollectionActivity extends BaseActivity implements View.OnClickList
                 break;
         }
     }
+>>>>>>> origin/five
 }
