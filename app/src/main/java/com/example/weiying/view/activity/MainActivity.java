@@ -82,6 +82,9 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
                             case 3:
                                 inclu_titles.setText(name);
                                 break;
+                            case 4:
+                                inclu_titles.setText(name);
+                                break;
                         }
                     }
                 })
