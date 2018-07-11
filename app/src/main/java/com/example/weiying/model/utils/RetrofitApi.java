@@ -19,7 +19,7 @@ public interface RetrofitApi {
     @GET("homePageApi/homePage.do")
     Observable<SelectedBeans> getSelected();
 
-   
+
 
 
     //发现
