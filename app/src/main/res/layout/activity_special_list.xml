@@ -14,6 +14,10 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/speciallist_recycler"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
-
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y10"
+        >
+    </android.support.v7.widget.RecyclerView>
 </LinearLayout>
+
+

@@ -39,6 +39,7 @@ public class SpecialAdapter extends RecyclerView.Adapter implements View.OnClick
         MyViewHolder myViewHolder = (MyViewHolder) holder;
 
         myViewHolder.special_imgview.setScaleType(ImageView.ScaleType.FIT_XY);
+
         ViewGroup.LayoutParams params = myViewHolder.special_imgview.getLayoutParams();
         DisplayMetrics dm = context.getResources().getDisplayMetrics();
         int width = dm.widthPixels / 2;//宽度为屏幕宽度一半
@@ -47,11 +48,11 @@ public class SpecialAdapter extends RecyclerView.Adapter implements View.OnClick
         params.height = (int) (width / 1.8);
         myViewHolder.special_imgview.setLayoutParams(params);
 
-        if (!list.get(position).getChildList().get(0).getPic().equals("")&&!list.get(position).getTitle().equals("")){
+        if (!list.get(position).getChildList().get(0).getPic().equals("")){
             Glide.with(context).load(list.get(position).getChildList().get(0).getPic()).into(myViewHolder.special_imgview);
+        }
+        if (list.get(position).getChildList().get(0).getTitle()!=null){
             myViewHolder.special_textview.setText(list.get(position).getTitle());
-        }else {
-            myViewHolder.itemView.setVisibility(View.GONE);
         }
 
         myViewHolder.itemView.setTag(position);
