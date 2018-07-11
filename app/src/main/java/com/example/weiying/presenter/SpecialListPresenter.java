@@ -10,7 +10,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class SpecialListPresenter  extends BasePresenter<ISpecialListView> {
+public class SpecialListPresenter extends BasePresenter<ISpecialListView> {
 
     private final RetrofitUtils instance;
 
@@ -49,4 +49,3 @@ public class SpecialListPresenter  extends BasePresenter<ISpecialListView> {
                 });
     }
 }
-

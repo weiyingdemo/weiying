@@ -4,13 +4,7 @@
     <!-- 填充的颜色 shape_sou-->
     <solid android:color="#fff" />
     <!-- 设置边框宽度 -->
-    <stroke android:width="1dp" android:color="#999999"/>
-    <!-- 四个角的弧度 -->
-    <corners
-        android:bottomLeftRadius="1dp"
-        android:bottomRightRadius="1dp"
-        android:topLeftRadius="1dp"
-        android:topRightRadius="1dp" />
+    <stroke  android:color="#fff"/>
     <!-- padding：TextView里面的文字与TextView边界的间隔 -->
     <padding
         android:bottom="4dp"
