@@ -8,10 +8,11 @@
 
     <ImageView
         android:id="@+id/speciallist_imgview"
-        android:layout_width="@dimen/x140"
+        android:layout_width="@dimen/x75"
         android:layout_height="@dimen/y75"
         android:src="@mipmap/ic_launcher"
-        android:layout_marginTop="@dimen/y12"
+        android:background="@drawable/bg_border1"
+        android:padding="@dimen/y3"
         />
 
     <TextView
@@ -20,7 +21,7 @@
         android:layout_height="wrap_content"
         android:text="生化危机"
         android:textSize="@dimen/y8"
-        android:layout_marginTop="@dimen/y8"
+        android:padding="@dimen/y3"
         />
 
 </LinearLayout>
