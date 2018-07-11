@@ -26,4 +26,8 @@ public interface RetrofitApi {
     Observable<FindBean> showfind(@Field("catalogId")String catalogId,@Field("pnum")int pnum);
 
 
+    //专题频道列表
+    @POST("columns/getVideoList.do")
+    @FormUrlEncoded
+    Observable<SpecialListBean> getSpecialList(@Field("catalogId")String catalogId);
 }
