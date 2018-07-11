@@ -151,6 +151,7 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
             case R.id.linear_download://下载
                 break;
             case R.id.linear_welfare://福利
+                startActivity(new Intent(MainActivity.this, WelfareActivity.class));
                 break;
             case R.id.linear_share://分享
                 break;

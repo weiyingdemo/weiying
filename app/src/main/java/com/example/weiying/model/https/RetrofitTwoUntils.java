@@ -1,7 +1,7 @@
 package com.example.weiying.model.https;
 
-import com.example.weiying.model.untils.Constant;
-import com.example.weiying.model.untils.RetrofitApi;
+import com.example.weiying.model.utils.Constant;
+import com.example.weiying.model.utils.RetrofitApi;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

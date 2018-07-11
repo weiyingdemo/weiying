@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'org.greenrobot.greendao'
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -16,7 +16,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
+greendao {
+    schemaVersion 1
+    targetGenDir 'src/main/java'
+}
+
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -48,6 +54,10 @@ dependencies {
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     implementation 'com.android.support:support-v4:27.1.1'
 
-    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    //greendao
+    implementation 'org.greenrobot:greendao:3.2.2'
+    implementation 'org.greenrobot:greendao-generator:3.2.2'
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
 
 }

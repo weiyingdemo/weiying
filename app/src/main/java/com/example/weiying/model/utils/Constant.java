@@ -1,4 +1,4 @@
-package com.example.weiying.model.untils;
+package com.example.weiying.model.utils;
 
 /**
  * Created by nyj on 2018/7/5.
