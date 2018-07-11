@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/find_lin"
+    android:layout_marginTop="@dimen/y22"
+    android:background="@drawable/bg_card"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/x254"
+    android:layout_height="@dimen/y290">
+    <TextView
+        android:layout_marginTop="@dimen/y15"
+        android:textColor="@color/white"
+        android:id="@+id/finditem_title"
+        android:layout_gravity="center"
+        android:text="name"
+        android:textSize="@dimen/y14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.example.weiying.model.custom.RoundImageView
+
+        android:id="@+id/img"
+        android:layout_marginLeft="@dimen/x60"
+        android:layout_marginTop="@dimen/y20"
+        android:layout_width="@dimen/x125"
+        android:layout_height="@dimen/y123" />
+    <TextView
+        android:layout_marginLeft="@dimen/x20"
+        android:layout_marginRight="@dimen/x20"
+        android:layout_marginTop="@dimen/y15"
+        android:layout_marginBottom="@dimen/y15"
+        android:textColor="@color/darker_gray"
+        android:id="@+id/finditem_maggess"
+        android:text="name"
+        android:textSize="@dimen/y10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

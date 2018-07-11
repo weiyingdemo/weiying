@@ -33,9 +33,9 @@ public class FirstActivity extends AppCompatActivity {
         Drawable cur = resources.getDrawable(array[index]);
         bg.setBackgroundDrawable(cur);
 
-        Animation alphaAnimation = new AlphaAnimation(1.0f, 0.0f);
-        alphaAnimation.setDuration(2000);//设置动画持续时间为500毫秒
-        alphaAnimation.setFillAfter(false);//设置动画结束后保持当前的位置（即不返回到动画开始前的位置）
+        Animation alphaAnimation = new AlphaAnimation(0.0f, 2.0f);
+        alphaAnimation.setDuration(3000);//设置动画持续时间为3000毫秒
+        alphaAnimation.setFillAfter(true);//设置动画结束后保持当前的位置（即不返回到动画开始前的位置）
         bg.startAnimation(alphaAnimation);
 
         final Intent it = new Intent(this, MainActivity.class); //你要转向的Activity
@@ -47,6 +47,6 @@ public class FirstActivity extends AppCompatActivity {
                 finish();
             }
         };
-        timer.schedule(task, 1000 * 2); //2秒后
+        timer.schedule(task, 1000 * 3); //2秒后
     }
 }

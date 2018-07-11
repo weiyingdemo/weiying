@@ -12,11 +12,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by nyj on 2018/7/5.
  */
-public class RetrofitUntils {
+public class RetrofitUtils {
 
     private final Retrofit retrofit;
 
-    public RetrofitUntils() {
+    public RetrofitUtils() {
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient build = new OkHttpClient.Builder()
@@ -31,13 +31,13 @@ public class RetrofitUntils {
     }
 
     //单例
-    private static RetrofitUntils INSTANCE;
+    private static RetrofitUtils INSTANCE;
 
-    public static RetrofitUntils getInstance() {
+    public static RetrofitUtils getInstance() {
         if (INSTANCE == null) {
-            synchronized (RetrofitUntils.class) {
+            synchronized (RetrofitUtils.class) {
                 if (INSTANCE == null) {
-                    INSTANCE = new RetrofitUntils();
+                    INSTANCE = new RetrofitUtils();
                 }
             }
         }
