@@ -1,4 +1,4 @@
-package com.example.weiying.model.untils;
+package com.example.weiying.model.utils;
 
 /**
  * Created by nyj on 2018/7/5.
@@ -6,5 +6,4 @@ package com.example.weiying.model.untils;
 public interface Constant {
    
     String baseUrl = "http://api.svipmovie.com/front/";
-    String twoUrl="http://api.svipmovie.com/";
 }

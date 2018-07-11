@@ -15,7 +15,7 @@ import com.example.weiying.view.interfaces.IBaseView;
  */
 public abstract class BaseActivity<P extends BasePresenter> extends AppCompatActivity implements IBaseView{
 
-    private P basePresenter;
+    public P basePresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
