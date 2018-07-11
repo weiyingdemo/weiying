@@ -101,7 +101,7 @@ public class MyViewGroup extends ViewGroup {
         mAllChildViews.add(lineViews);
         //设置子view的位置
         int left = 20;
-        int top = 100;
+        int top = 5;
         int lineCount = mAllChildViews.size();
         for (int i = 0; i < lineCount; i++) {
             lineViews = mAllChildViews.get(i);

@@ -16,13 +16,29 @@ import com.example.weiying.view.fragment.MineFragment;
 import com.example.weiying.view.fragment.SelectedFragment;
 import com.example.weiying.view.fragment.SpecialFragment;
 import com.example.weiying.view.interfaces.IMainView;
-
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.hjm.bottomtabbar.BottomTabBar;
 
-public class MainActivity extends BaseActivity implements IMainView {
+public class MainActivity extends BaseActivity implements IMainView, View.OnClickListener {
 
     private BottomTabBar mMainBtb;
     private TextView inclu_titles;
+    private SimpleDraweeView main_sdv;
+    private TextView main_name;
+    private SimpleDraweeView mMainSdv;
+    private TextView mMainName;
+    private LinearLayout mLinearCollection;
+    private LinearLayout mLinearDownload;
+    private LinearLayout mLinearWelfare;
+    private LinearLayout mLinearShare;
+    private LinearLayout mLinearSuggest;
+    private LinearLayout mLinearSetting;
+    private LinearLayout mLinearTheme;
+    private LinearLayout mLinearAbout;
+    /**
+     * 精选
+     */
+    private TextView mIncluTitles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +53,6 @@ public class MainActivity extends BaseActivity implements IMainView {
 
     @Override
     protected void initData() {
-        FindFragment findFragment = new FindFragment();
-
-
         //底部导航栏
         mMainBtb.init(getSupportFragmentManager())
                 .setImgSize(80, 80)
@@ -73,6 +86,10 @@ public class MainActivity extends BaseActivity implements IMainView {
                     }
                 })
                 .isShowDivider(false);
+        //加载圆形图片
+        Uri uri = Uri.parse("res://com.example.weiying/" + R.mipmap.photo);
+        main_sdv.setImageURI(uri);
+        main_name.setText("微影,微一下");
     }
 
 
@@ -85,7 +102,34 @@ public class MainActivity extends BaseActivity implements IMainView {
     protected void initView() {
         inclu_titles = findViewById(R.id.inclu_titles);
         mMainBtb = (BottomTabBar) findViewById(R.id.main_btb);
+        main_sdv = findViewById(R.id.main_sdv);
+        main_name = findViewById(R.id.main_name);
 
+
+        mMainSdv = (SimpleDraweeView) findViewById(R.id.main_sdv);
+        mMainSdv.setOnClickListener(this);
+        mMainName = (TextView) findViewById(R.id.main_name);
+        mMainName.setOnClickListener(this);
+        mLinearCollection = (LinearLayout) findViewById(R.id.linear_collection);
+        mLinearCollection.setOnClickListener(this);
+        mLinearDownload = (LinearLayout) findViewById(R.id.linear_download);
+        mLinearDownload.setOnClickListener(this);
+        mLinearWelfare = (LinearLayout) findViewById(R.id.linear_welfare);
+        mLinearWelfare.setOnClickListener(this);
+        mLinearShare = (LinearLayout) findViewById(R.id.linear_share);
+        mLinearShare.setOnClickListener(this);
+        mLinearSuggest = (LinearLayout) findViewById(R.id.linear_suggest);
+        mLinearSuggest.setOnClickListener(this);
+        mLinearSetting = (LinearLayout) findViewById(R.id.linear_setting);
+        mLinearSetting.setOnClickListener(this);
+        mLinearTheme = (LinearLayout) findViewById(R.id.linear_theme);
+        ;
+        mLinearTheme.setOnClickListener(this);
+        mLinearAbout = (LinearLayout) findViewById(R.id.linear_about);
+        mLinearAbout.setOnClickListener(this);
+        mIncluTitles = (TextView) findViewById(R.id.inclu_titles);
+        mIncluTitles.setOnClickListener(this);
+        mMainBtb.setOnClickListener(this);
     }
 
     @Override
@@ -98,4 +142,27 @@ public class MainActivity extends BaseActivity implements IMainView {
 
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.linear_collection://收藏
+                startActivity(new Intent(MainActivity.this, CollectionActivity.class));
+                break;
+            case R.id.linear_download://下载
+                break;
+            case R.id.linear_welfare://福利
+                startActivity(new Intent(MainActivity.this, WelfareActivity.class));
+                break;
+            case R.id.linear_share://分享
+                break;
+            case R.id.linear_suggest://建议
+                break;
+            case R.id.linear_setting://设置
+                break;
+            case R.id.linear_theme://主题
+                break;
+            case R.id.linear_about://关于
+                break;
+        }
+    }
 }
