@@ -2,6 +2,7 @@ package com.example.weiying.model.untils;
 
 import com.example.weiying.model.bean.FindBean;
 import com.example.weiying.model.bean.SelectedBeans;
+import com.example.weiying.model.bean.SpecialListBean;
 
 
 import java.util.Map;
@@ -19,8 +20,10 @@ public interface RetrofitApi {
     //首页接口
     @GET("homePageApi/homePage.do")
     Observable<SelectedBeans> getSelected();
-    //专题频道下的---列表
+
+    //发现接口
     @POST("columns/getVideoList.do")
+    @FormUrlEncoded
     Observable<FindBean> showfind(@Field("catalogId") String catalogId, @Field("pnum") int pnum);
 
     //详情接口
@@ -28,6 +31,9 @@ public interface RetrofitApi {
     @FormUrlEncoded
     @POST("videoDetailApi/videoDetail.do")
     Observable<FindBean> showDetails(@Field("mediaId") String mediaId);
+
+    //专题频道下的---列表
+    @POST("columns/getVideoList.do")
     @FormUrlEncoded
     Observable<SpecialListBean> getSpecialList(@Field("catalogId") String catalogId);
 }
