@@ -15,7 +15,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/y50"
             android:src="@mipmap/ic_launcher" />
 
         <LinearLayout

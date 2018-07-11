@@ -10,10 +10,16 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.weiying.R;
 
+import com.example.weiying.model.bean.SpecialListBean;
 import com.example.weiying.presenter.BasePresenter;
+import com.example.weiying.presenter.SpecialListPresenter;
+import com.example.weiying.view.adapter.SpecialListAdapter;
+import com.example.weiying.view.interfaces.ISpecialListView;
+
+import java.util.List;
 
 
-public class SpecialListActivity extends BaseActivity{
+public class SpecialListActivity extends BaseActivity<SpecialListPresenter> implements ISpecialListView{
 
     private String catalogid;
     private RecyclerView speciallist_recycler;
@@ -31,12 +37,12 @@ public class SpecialListActivity extends BaseActivity{
 
     @Override
     protected void initData() {
-
-}
+        basePresenter.getSpecialListData(catalogid);
+    }
 
     @Override
-    BasePresenter setPresenter() {
-        return new BasePresenter();
+    SpecialListPresenter setPresenter() {
+        return new SpecialListPresenter();
     }
 
     @Override
@@ -49,4 +55,10 @@ public class SpecialListActivity extends BaseActivity{
     }
 
 
+    @Override
+    public void onSuccess(SpecialListBean.RetBean ret) {
+        List<SpecialListBean.RetBean.ListBean> list = ret.getList();
+        SpecialListAdapter specialListAdapter = new SpecialListAdapter(this, list);
+        speciallist_recycler.setAdapter(specialListAdapter);
+    }
 }

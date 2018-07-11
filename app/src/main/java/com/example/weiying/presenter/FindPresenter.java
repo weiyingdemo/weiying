@@ -23,7 +23,7 @@ public class FindPresenter extends BasePresenter<IFindview> {
     }
 
     public void showfind(String catalogId,int pnum){
-        /*Observable<FindBean> showfind = instance.getApi().showfind(catalogId, pnum);
+        Observable<FindBean> showfind = instance.getApi().showfind(catalogId, pnum);
         showfind.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<FindBean>() {
@@ -51,7 +51,7 @@ public class FindPresenter extends BasePresenter<IFindview> {
             public void onComplete() {
 
             }
-        });*/
+        });
 
     }
 
