@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -164,6 +165,13 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
 
                 break;
             case R.id.linear_suggest://建议
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                AlertDialog alertDialog = builder.create();
+                View inflate = View.inflate(this, R.layout.dialog_advise, null);
+                alertDialog.setView(inflate);
+                TextView t = inflate.findViewById(R.id.t);
+                t.setText(Build.BRAND+Build.MODEL);
+                alertDialog.show();
 
                 break;
             case R.id.linear_setting://设置

@@ -147,7 +147,7 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
                     textView.setTextSize(13);
                     //textView.setBackgroundResource(R.drawable.liushi);
                     search_myVg.addView(textView, lp);
-                    //查添加数据库
+                    //添加数据库
                     myBeansDao.insert(new MyBeans(null, name));
                     //跳转
                     intent = new Intent(SearchActivity.this, ListActivity.class);
