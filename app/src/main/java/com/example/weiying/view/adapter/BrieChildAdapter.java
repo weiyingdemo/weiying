@@ -39,7 +39,7 @@ public class BrieChildAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
         MyHolder hh= (MyHolder) holder;
         Glide.with(context)
                 .load(list.get(position).getPic())
@@ -49,25 +49,37 @@ public class BrieChildAdapter extends RecyclerView.Adapter {
                 .into(hh.brie_img);
         hh.brie_title.setText(list.get(position).getTitle());
         //分割
-        String loadURL = list.get(position).getLoadURL();
-        String[] split = loadURL.split("=");
-        for (int i = 0; i < split.length; i++) {
-            String a = split[1];
-            String[] b = a.split("&");
-            for (int j = 0; j < b.length; j++) {
-                mediaId = b[0];
+
+        hh.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String loadURL = list.get(position).getLoadURL();
+                String[] split = loadURL.split("=");
+                for (int i = 0; i < split.length; i++) {
+                    String a = split[1];
+                    String[] b = a.split("&");
+                    for (int j = 0; j < b.length; j++) {
+                        mediaId = b[0];
+                    }
+                }
+                Intent intent = new Intent(context,DetailsActivity.class);
+                intent.putExtra("mediaId",mediaId);
+                context.startActivity(intent);
+                Log.e("adapter _child",mediaId);
             }
-        }
-        Log.e("child",mediaId);
-        hh.rela.setOnClickListener(new View.OnClickListener() {
+        });
+
+
+
+       /* hh.rela.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context,DetailsActivity.class);
                 intent.putExtra("mediaId",mediaId);
                 context.startActivity(intent);
-                
+
             }
-        });
+        });*/
 
 
 
