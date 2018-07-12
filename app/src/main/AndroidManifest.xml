@@ -33,6 +33,7 @@
         <activity android:name=".view.activity.ListActivity" />
         <activity android:name=".view.activity.WelfareActivity" />
         <activity android:name=".view.activity.DetailsActivity" />
+        <activity android:name=".view.activity.SetupActivity"/>
         <activity android:name=".view.activity.SpecialListActivity" />
         <activity android:name=".view.activity.SettingActivity"></activity>
     </application>
