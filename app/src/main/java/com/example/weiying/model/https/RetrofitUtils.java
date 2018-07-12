@@ -1,6 +1,7 @@
 package com.example.weiying.model.https;
 
 import com.example.weiying.model.utils.Constant;
+import com.example.weiying.model.utils.RetrofitApi;
 
 
 import okhttp3.OkHttpClient;
@@ -45,8 +46,8 @@ public class RetrofitUtils {
     }
 
     //接口供调用
-    public com.example.weiying.model.utils.RetrofitApi getApi() {
+    public RetrofitApi getApi() {
 
-        return retrofit.create(com.example.weiying.model.utils.RetrofitApi.class);
+        return retrofit.create(RetrofitApi.class);
     }
 }

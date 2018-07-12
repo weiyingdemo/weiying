@@ -44,7 +44,6 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
      */
     private TextView mSearchHistotry;
     private ImageView mSearchDeleate;
-    private RecyclerView mSearchRcy;
     private MyViewGroup search_myVg;
     private Intent intent;
     private TextView search;
@@ -126,8 +125,6 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
         mSearchHistotry.setOnClickListener(this);
         mSearchDeleate = (ImageView) findViewById(R.id.search_deleate);
         mSearchDeleate.setOnClickListener(this);
-        mSearchRcy = (RecyclerView) findViewById(R.id.search_rcy);
-        mSearchRcy.setOnClickListener(this);
         search_myVg = findViewById(R.id.search_myVg);
         search = findViewById(R.id.search);
         search.setOnClickListener(this);

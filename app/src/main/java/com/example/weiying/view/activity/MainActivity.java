@@ -1,5 +1,6 @@
 package com.example.weiying.view.activity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -39,6 +40,9 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
      * 精选
      */
     private TextView mIncluTitles;
+    private TextView dialog_t;
+    private TextView dialog_tv;
+    private TextView dilog_close;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +84,9 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
                                 inclu_titles.setText(name);
                                 break;
                             case 3:
+                                inclu_titles.setText(name);
+                                break;
+                            case 4:
                                 inclu_titles.setText(name);
                                 break;
                         }
@@ -154,14 +161,49 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
                 startActivity(new Intent(MainActivity.this, WelfareActivity.class));
                 break;
             case R.id.linear_share://分享
+
                 break;
             case R.id.linear_suggest://建议
+
                 break;
             case R.id.linear_setting://设置
+                startActivity(new Intent(MainActivity.this, SettingActivity.class));
                 break;
             case R.id.linear_theme://主题
+
                 break;
             case R.id.linear_about://关于
+                //1.创建构造器对象
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this);
+                //2.通过构造器对象,,,创建出来一个AlertDialog的对象
+                final AlertDialog dialog = builder1.create();
+                //3.通过AlertDialog的对象,,,去设置自己的布局(视图对象)
+                View contentView = View.inflate(MainActivity.this, R.layout.dialog_layout, null);
+                dialog.setView(contentView);
+                //4.可以执行逻辑操作,,,按钮的监听,,,找控件还是必须通过,视图对象去找
+                dialog_t = contentView.findViewById(R.id.dialog_t);
+                dialog_tv = contentView.findViewById(R.id.dialog_tv);
+                dilog_close = contentView.findViewById(R.id.dilog_close);
+                dilog_close.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog_t.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(MainActivity.this, WebViewActivity.class));
+                    }
+                });
+                dialog_tv.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(MainActivity.this, WebViewActivity.class));
+                    }
+                });
+                //5.显示对话框
+                dialog.show();
                 break;
         }
     }

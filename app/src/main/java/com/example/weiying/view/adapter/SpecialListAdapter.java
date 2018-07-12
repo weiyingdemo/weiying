@@ -33,6 +33,7 @@ public class SpecialListAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         MyViewHolder myViewHolder = (MyViewHolder) holder;
+        myViewHolder.speciallist_imgview.setScaleType(ImageView.ScaleType.FIT_XY);
         myViewHolder.speciallist_textview.setText(list.get(position).getTitle());
         Glide.with(context).load(list.get(position).getPic()).into(myViewHolder.speciallist_imgview);
     }

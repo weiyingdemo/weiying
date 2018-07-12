@@ -20,9 +20,6 @@ public interface RetrofitApi {
     @GET("homePageApi/homePage.do")
     Observable<SelectedBeans> getSelected();
 
-
-
-
     //发现
     @POST("columns/getVideoList.do")
     @FormUrlEncoded
