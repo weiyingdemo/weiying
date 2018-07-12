@@ -2,17 +2,17 @@
 <RelativeLayout
     android:background="@color/colorAccent"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="@dimen/y33">
 
     <ImageView
       android:id="@+id/title_back"
-        android:layout_width="@dimen/x20"
-        android:layout_height="@dimen/y20"
+        android:layout_width="@dimen/x19"
+        android:layout_height="@dimen/y19"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="@dimen/y17"
+        android:layout_marginTop="@dimen/y8"
         android:layout_marginLeft="@dimen/x15"
-        android:src="@mipmap/back" />
+        android:src="@drawable/back" />
 
     <TextView
         android:id="@+id/title_name"
@@ -20,16 +20,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/y20"
+        android:layout_marginTop="@dimen/y10"
         android:text="name"
         android:textSize="@dimen/y10" />
 
     <ImageView
         android:id="@+id/title_shou"
-        android:layout_marginTop="@dimen/y15"
+        android:layout_marginTop="@dimen/y8"
         android:layout_width="@dimen/x21"
         android:layout_height="@dimen/y21"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="@dimen/x15"
-        android:src="@mipmap/collection" />
+       android:src="@drawable/collection" />
 </RelativeLayout>

@@ -1,8 +1,10 @@
 package com.example.weiying.view.activity;
 
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -31,7 +33,10 @@ public abstract class BaseActivity<P extends BasePresenter> extends AppCompatAct
         if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.KITKAT){
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            //透明导航栏
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
+
     }
 
     protected abstract int setLayout();

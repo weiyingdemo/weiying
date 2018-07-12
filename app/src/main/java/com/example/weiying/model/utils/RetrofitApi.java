@@ -1,5 +1,6 @@
 package com.example.weiying.model.utils;
 
+import com.example.weiying.model.bean.DetailsBean;
 import com.example.weiying.model.bean.FindBean;
 import com.example.weiying.model.bean.SelectedBeans;
 import com.example.weiying.model.bean.SpecialListBean;
@@ -29,4 +30,9 @@ public interface RetrofitApi {
     @POST("columns/getVideoList.do")
     @FormUrlEncoded
     Observable<SpecialListBean> getSpecialList(@Field("catalogId")String catalogId);
+
+    //详情页面
+    @POST("videoDetailApi/videoDetail.do")
+    @FormUrlEncoded
+    Observable<DetailsBean> showDetail(@Field("mediaId")String mediaId);
 }
