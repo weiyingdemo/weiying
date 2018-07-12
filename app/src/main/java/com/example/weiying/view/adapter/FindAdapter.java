@@ -67,7 +67,6 @@ public class FindAdapter extends RecyclerView.Adapter {
             }
             }
 
-
             //点击视图  跳转到详情页面
             h.find_lin.setOnClickListener(new View.OnClickListener() {
                 @Override
