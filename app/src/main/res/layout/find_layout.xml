@@ -25,10 +25,9 @@
         android:layout_height="@dimen/y22"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="@dimen/y19"
+        android:layout_marginBottom="@dimen/y25"
         android:background="@drawable/bg_button"
-        android:padding="2dp"
+
         android:text="换一批"
         android:textColor="@android:color/white" />
 </RelativeLayout>

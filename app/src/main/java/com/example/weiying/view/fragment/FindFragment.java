@@ -39,17 +39,17 @@ import java.util.Random;
 /**
  * Created by nyj on 2018/7/6.
  */
-public class FindFragment extends Fragment implements IFindview {
+public class FindFragment extends Fragment implements IFindview{
 
 
     private RecyclerView find_recyclers;
     private TextView find_none;
     private Button find_huanyipi;
-    ArrayList<FindBean.RetBean.ListBean> biglist = new ArrayList<FindBean.RetBean.ListBean>();
-    int page = 1;
+    ArrayList<FindBean.RetBean.ListBean> biglist= new ArrayList<FindBean.RetBean.ListBean>();
+    int page=1;
     private FindAdapter adapter;
     private FindPresenter findPresenter;
-    Handler handler = new Handler() {
+    Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
@@ -59,20 +59,20 @@ public class FindFragment extends Fragment implements IFindview {
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View inflate = inflater.inflate(R.layout.find_layout, container, false);
-        find_recyclers = (RecyclerView) inflate.findViewById(R.id.find_recyclers);
-        find_none = (TextView) inflate.findViewById(R.id.find_none);
-        find_huanyipi = (Button) inflate.findViewById(R.id.find_huanyipi);
+            View inflate = inflater.inflate(R.layout.find_layout, container, false);
+            find_recyclers = (RecyclerView) inflate.findViewById(R.id.find_recyclers);
+            find_none = (TextView) inflate.findViewById(R.id.find_none);
+            find_huanyipi = (Button) inflate.findViewById(R.id.find_huanyipi);
 
 
-        findPresenter = new FindPresenter();
-        findPresenter.attachView(this);
-        findPresenter.showfind("402834815584e463015584e539330016", page);
+            findPresenter = new FindPresenter();
+            findPresenter.attachView(this);
+            findPresenter.showfind("402834815584e463015584e539330016",page);
+
 
 
         return inflate;
     }
-
     public void initData() {
 
         CardItemTouchHelperCallback cardCallback = new CardItemTouchHelperCallback(find_recyclers.getAdapter(), biglist);
@@ -89,6 +89,9 @@ public class FindFragment extends Fragment implements IFindview {
                 FindAdapter.MyViewHolder myHolder = (FindAdapter.MyViewHolder) viewHolder;
                 viewHolder.itemView.setAlpha(1f);
             }
+
+
+
 
 
             @Override
@@ -115,15 +118,16 @@ public class FindFragment extends Fragment implements IFindview {
     }
 
 
+
     @Override
     public void onFindSussecc(List<FindBean.RetBean.ListBean> list) {
 
-        Log.e("findadapter", list.get(0).getTitle());
+        Log.e("findadapter",list.get(0).getTitle());
 
-        biglist.addAll(list);
-        Log.e("find_adapter", biglist.get(0).getTitle());
-        adapter = new FindAdapter(biglist, getActivity());
-        find_recyclers.setAdapter(adapter);
+          biglist.addAll(list);
+        Log.e("find_adapter",biglist.get(0).getTitle());
+          adapter = new FindAdapter(biglist,getActivity());
+          find_recyclers.setAdapter(adapter);
 
         initData();
 
@@ -132,11 +136,11 @@ public class FindFragment extends Fragment implements IFindview {
             public void onClick(View v) {
                 biglist.clear();
                 //随机数
-                int min = 1;
-                int max = 9;
+                int min=1;
+                int max=9;
                 Random random = new Random();
-                int num = random.nextInt(max) % (max - min + 1) + min;
-                findPresenter.showfind("402834815584e463015584e539330016", num);
+                int num = random.nextInt(max)%(max-min+1) + min;
+                findPresenter.showfind("402834815584e463015584e539330016",num);
                 handler.sendEmptyMessage(0);
 
             }

@@ -41,7 +41,7 @@ public class FindAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int position) {
 
 
             MyViewHolder h= (MyViewHolder) holder;
@@ -65,13 +65,14 @@ public class FindAdapter extends RecyclerView.Adapter {
             for (int j = 0; j < b.length; j++) {
                 mediaId = b[0];
             }
-            }
-
+        }
 
             //点击视图  跳转到详情页面
             h.find_lin.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+
                     Log.e("findadapter",mediaId);
                  //   DetailsActivity.start(context, videoInfo);
                     Intent intent = new Intent(context,DetailsActivity.class);
@@ -81,7 +82,7 @@ public class FindAdapter extends RecyclerView.Adapter {
                 }
             });
 
-            
+
         }
 
     @Override
