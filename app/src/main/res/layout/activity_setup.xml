@@ -30,10 +30,14 @@
             android:layout_marginTop="20dp"
             android:src="@mipmap/right"/>
     </LinearLayout>
+
+
+
     <LinearLayout
         android:id="@+id/aingli_setup"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginTop="2dp"
         android:orientation="horizontal">
 
         <RelativeLayout
@@ -66,6 +70,7 @@
         </RelativeLayout>
     </LinearLayout>
 
+
     <LinearLayout
         android:id="@+id/women_setup"
         android:layout_width="match_parent"
@@ -89,9 +94,13 @@
             android:layout_marginTop="20dp"
             android:src="@mipmap/right"/>
     </LinearLayout>
+
+
+
     <LinearLayout
         android:id="@+id/jianyi_setup"
         android:layout_width="match_parent"
+        android:layout_marginTop="2dp"
         android:layout_height="50dp"
         android:orientation="horizontal">
         <TextView

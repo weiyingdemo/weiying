@@ -41,14 +41,7 @@ public class MineFragment extends Fragment {
                 startActivity(intent);
             }
         });
-         /*lishi_mine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), SetupActivity.class);
-                startActivity(intent);
 
-            }
-        });*/
 
 
         return inflate;
