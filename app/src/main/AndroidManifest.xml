@@ -32,7 +32,11 @@
         <activity android:name=".view.activity.SearchActivity" />
         <activity android:name=".view.activity.ListActivity" />
         <activity android:name=".view.activity.WelfareActivity"></activity>
-        <activity android:name=".view.activity.DetailsActivity"></activity>
+        <activity android:name=".view.activity.DetailsActivity"
+
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            ></activity>
         <activity android:name=".view.activity.SpecialListActivity"></activity>
     </application>
 

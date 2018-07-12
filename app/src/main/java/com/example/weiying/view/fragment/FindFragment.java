@@ -96,6 +96,7 @@ public class FindFragment extends Fragment implements IFindview{
 
             @Override
             public void onSwipedClear() {
+                find_none.setVisibility(View.VISIBLE);
                 Toast.makeText(getActivity(), "data clear", Toast.LENGTH_SHORT).show();
                 find_recyclers.postDelayed(new Runnable() {
                     @Override
@@ -123,11 +124,14 @@ public class FindFragment extends Fragment implements IFindview{
     public void onFindSussecc(List<FindBean.RetBean.ListBean> list) {
 
         Log.e("findadapter",list.get(0).getTitle());
-
-          biglist.addAll(list);
+        find_none.setVisibility(View.GONE);
+        biglist.addAll(list);
         Log.e("find_adapter",biglist.get(0).getTitle());
-          adapter = new FindAdapter(biglist,getActivity());
-          find_recyclers.setAdapter(adapter);
+        if(adapter==null){
+            adapter = new FindAdapter(biglist,getActivity());
+            find_recyclers.setAdapter(adapter);
+        }
+
 
         initData();
 

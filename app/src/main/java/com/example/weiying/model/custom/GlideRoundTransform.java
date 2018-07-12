@@ -12,7 +12,7 @@ import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
 
 public class GlideRoundTransform extends BitmapTransformation {
-    private static float radius = 20f;
+    private static float radius = 30f;
 
     public GlideRoundTransform(Context context) {
         this(context, 4);
