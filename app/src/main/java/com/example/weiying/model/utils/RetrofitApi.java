@@ -1,5 +1,6 @@
 package com.example.weiying.model.utils;
 
+import com.example.weiying.model.bean.CommentBean;
 import com.example.weiying.model.bean.DetailsBean;
 import com.example.weiying.model.bean.FindBean;
 import com.example.weiying.model.bean.SearchListBeans;
@@ -41,4 +42,11 @@ public interface RetrofitApi {
     @POST("videoDetailApi/videoDetail.do")
     @FormUrlEncoded
     Observable<DetailsBean> showDetail(@Field("mediaId")String mediaId);
+
+    //评论页面
+
+    @POST("Commentary/getCommentList.do")
+    @FormUrlEncoded
+    Observable<CommentBean> ShowComment(@Field("mediaId") String mediaId, @Field("pnum") int pnum);
+
 }
