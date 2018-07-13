@@ -49,6 +49,7 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
     private TextView search;
     private MyBeansDao myBeansDao;
     private String name;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +103,7 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
 
             }
         });
+
     }
 
     @Override
@@ -142,12 +144,25 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
                     lp.rightMargin = 5;
                     lp.topMargin = 5;
                     lp.bottomMargin = 5;
-                    TextView textView = new TextView(SearchActivity.this);
+                    textView = new TextView(SearchActivity.this);
                     textView.setText(name);
                     textView.setTextColor(Color.WHITE);
                     textView.setTextSize(13);
                     //textView.setBackgroundResource(R.drawable.liushi);
                     search_myVg.addView(textView, lp);
+                   /* search_myVg.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String s = textView.getText().toString();
+                            Log.e("tiao",s );
+                            mSearchEdit.setText(s);
+                            intent = new Intent(SearchActivity.this, ListActivity.class);
+                            intent.putExtra("name", name);
+                            // intent.putExtra("s", s);
+                            startActivity(intent);
+                        }
+                    });*/
+
                     List<MyBeans> list = myBeansDao.queryBuilder()
                             .where(MyBeansDao.Properties.Id.notEq(999))
                             .orderAsc(MyBeansDao.Properties.Id)
@@ -161,16 +176,7 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
                             intent.putExtra("name", name);
                             startActivity(intent);
                         }
-                        textView.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                intent = new Intent(SearchActivity.this, ListActivity.class);
-                                intent.putExtra("name", name);
-                                startActivity(intent);
-                            }
-                        });
                     }
-
                     //添加数据库
                     myBeansDao.insert(new MyBeans(null, name));
                     //跳转

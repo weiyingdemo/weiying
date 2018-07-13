@@ -41,6 +41,7 @@ public class ListActivity extends BaseActivity<SearchListPresenter> implements I
     List<SearchListBeans.RetBean.ListBean> listAll = new ArrayList<>();
 
     private SearchListAdapter searchListAdapter;
+    private String s;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +61,8 @@ public class ListActivity extends BaseActivity<SearchListPresenter> implements I
         //接收值
         Intent intent = getIntent();
         name = intent.getStringExtra("name");
-        //  Log.e("name", name);
+        s = intent.getStringExtra("s");
+        search_edit.setText(s);
         basePresenter.attachView(this);
         basePresenter.loadSearchListData(name);
     }
