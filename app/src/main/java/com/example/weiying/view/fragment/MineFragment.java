@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.color.ColorChooserDialog;
 import com.example.weiying.R;
 import com.example.weiying.ResideLayout;
 import com.example.weiying.view.activity.MainActivity;
@@ -23,8 +24,8 @@ import com.example.weiying.view.activity.SetupActivity;
 /**
  * Created by nyj on 2018/7/6.
  */
-public class MineFragment extends Fragment  implements ColorChooserDialog.ColorCallback{
-public class MineFragment extends Fragment implements View.OnClickListener {
+public class MineFragment extends Fragment  implements ColorChooserDialog.ColorCallback, View.OnClickListener {
+
 
     private ImageView shezhi_mine;
     private LinearLayout lishi_mine;
@@ -46,27 +47,8 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         shouzang_mine = inflate.findViewById(R.id.shouzang_mine);
         zhuti_mine = inflate.findViewById(R.id.zhuti_mine);
         reside_layout = (ResideLayout) inflate.findViewById(R.id.reside_layout);
-        shezhi_mine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), SettingActivity.class);
-                startActivity(intent);
-            }
-        });
-       zhuti_mine.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               //有些按钮是系统默认的
-               new ColorChooserDialog.Builder(getActivity(), R.string.color_palette)
-                       .accentMode(true)//
-                       .customColors(primary, null)//两个颜色数组
-                       .dynamicButtonColor(true)//动态按钮颜色
-                       .customButton(0)//设置颜色不显示
-                       .cancelButton(R.string.cancle)
-                       .doneButton(R.string.done)
-                       .show(getActivity());//传入上下文
-           }
-       });
+
+
 
         //颜色的数组
         primary = new int[]{
@@ -130,7 +112,14 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), SettingActivity.class));
                 break;
             case R.id.zhuti_mine://主题
-
+                new ColorChooserDialog.Builder(getActivity(), R.string.color_palette)
+                        .accentMode(true)//
+                        .customColors(primary, null)//两个颜色数组
+                        .dynamicButtonColor(true)//动态按钮颜色
+                        .customButton(0)//设置颜色不显示
+                        .cancelButton(R.string.cancle)
+                        .doneButton(R.string.done)
+                        .show(getActivity());//传入上下文
                 break;
         }
     }

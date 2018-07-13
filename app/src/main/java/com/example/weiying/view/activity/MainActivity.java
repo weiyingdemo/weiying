@@ -17,7 +17,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.color.ColorChooserDialog;
 import com.example.weiying.R;
+import com.example.weiying.ResideLayout;
 import com.example.weiying.presenter.BasePresenter;
 import com.example.weiying.view.fragment.FindFragment;
 import com.example.weiying.view.fragment.LiveBroadcastFragment;
@@ -28,12 +30,12 @@ import com.example.weiying.view.interfaces.IMainView;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.hjm.bottomtabbar.BottomTabBar;
 
-public class MainActivity extends BaseActivity implements IMainView, View.OnClickListener,ColorChooserDialog.ColorCallback {
-import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MainActivity extends BaseActivity implements IMainView, View.OnClickListener {
+
+
+public class MainActivity extends BaseActivity implements IMainView, View.OnClickListener, ColorChooserDialog.ColorCallback {
 
     private BottomTabBar mMainBtb;
     private TextView inclu_titles;
@@ -153,6 +155,8 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
 
     @Override
     protected void initView() {
+
+         main_liner = findViewById(R.id.main_liner);
         inclu_titles = findViewById(R.id.inclu_titles);
         mMainBtb = (BottomTabBar) findViewById(R.id.main_btb);
         main_sdv = findViewById(R.id.main_sdv);
