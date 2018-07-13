@@ -4,4 +4,166 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y75"
+        android:layout_marginTop="@dimen/x60"
+        android:background="@mipmap/my_bg_colorful">
+
+        <ImageView
+            android:id="@+id/shezhi_mine"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y25"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"
+            android:src="@mipmap/my_set" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lishi_mine"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="@dimen/y30"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/x55"
+            android:layout_height="@dimen/y15"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/lishi" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="16dp"
+            android:textColor="#fff"
+            android:text="历史" />
+
+
+        <ImageView
+            android:layout_width="@dimen/x10"
+            android:layout_height="@dimen/y11"
+            android:layout_marginLeft="@dimen/x160"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/right"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="@dimen/x200"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/x70"
+        android:background="#aaa"/>
+
+    <LinearLayout
+        android:id="@+id/huancun_mine"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/x55"
+            android:layout_height="@dimen/y15"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/huancun" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="16dp"
+            android:textColor="#fff"
+            android:text="缓存" />
+
+        <ImageView
+            android:layout_width="@dimen/x10"
+            android:layout_height="@dimen/y11"
+            android:layout_marginLeft="@dimen/x160"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/right"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="@dimen/x200"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/x70"
+        android:background="#aaa"/>
+
+    <LinearLayout
+        android:id="@+id/shouzang_mine"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:showDividers="end"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/x55"
+            android:layout_height="@dimen/y15"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/shoucang" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="16dp"
+            android:textColor="#fff"
+            android:text="收藏" />
+
+        <ImageView
+            android:layout_width="@dimen/x10"
+            android:layout_height="@dimen/y11"
+            android:layout_marginLeft="@dimen/x160"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/right"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="@dimen/x200"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/x70"
+        android:background="#aaa"/>
+
+    <LinearLayout
+        android:id="@+id/zhuti_mine"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:showDividers="end"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/x55"
+            android:layout_height="@dimen/y15"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/zhuti" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="16dp"
+            android:textColor="#fff"
+            android:text="主题" />
+
+        <ImageView
+            android:layout_width="@dimen/x10"
+            android:layout_height="@dimen/y11"
+            android:layout_marginLeft="@dimen/x160"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/right"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="@dimen/x200"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/x70"
+        android:background="#aaa"/>
+
 </LinearLayout>
