@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.weiying.R;
+import com.example.weiying.view.activity.SettingActivity;
 import com.example.weiying.view.activity.SetupActivity;
 
 /**
@@ -37,7 +38,7 @@ public class MineFragment extends Fragment {
        shezhi_mine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), SetupActivity.class);
+                Intent intent = new Intent(getActivity(), SettingActivity.class);
                 startActivity(intent);
             }
         });
@@ -50,6 +51,6 @@ public class MineFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
+        //getActivity().finish();
     }
 }

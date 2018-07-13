@@ -28,34 +28,35 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="@dimen/x55"
+            android:layout_width="@dimen/x15"
             android:layout_height="@dimen/y15"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
-            android:src="@mipmap/lishi" />
+            android:src="@mipmap/my_records" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:textSize="16dp"
+            android:layout_marginTop="18dp"
+            android:text="历史"
+            android:layout_marginLeft="@dimen/x16"
             android:textColor="#fff"
-            android:text="历史" />
+            android:textSize="@dimen/x16" />
 
 
         <ImageView
-            android:layout_width="@dimen/x10"
-            android:layout_height="@dimen/y11"
-            android:layout_marginLeft="@dimen/x160"
+            android:layout_width="@dimen/x12"
+            android:layout_height="@dimen/y12"
+            android:layout_marginLeft="@dimen/x180"
             android:layout_marginTop="20dp"
-            android:src="@mipmap/right"/>
+            android:src="@mipmap/right" />
     </LinearLayout>
 
     <TextView
         android:layout_width="@dimen/x200"
         android:layout_height="1dp"
         android:layout_marginLeft="@dimen/x70"
-        android:background="#aaa"/>
+        android:background="#aaa" />
 
     <LinearLayout
         android:id="@+id/huancun_mine"
@@ -64,62 +65,64 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="@dimen/x55"
+            android:layout_width="@dimen/x15"
             android:layout_height="@dimen/y15"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
-            android:src="@mipmap/huancun" />
+            android:src="@mipmap/my_down" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:textSize="16dp"
+            android:layout_marginTop="18dp"
+            android:text="缓存"
             android:textColor="#fff"
-            android:text="缓存" />
+            android:layout_marginLeft="@dimen/x16"
+            android:textSize="@dimen/x16" />
 
         <ImageView
-            android:layout_width="@dimen/x10"
-            android:layout_height="@dimen/y11"
-            android:layout_marginLeft="@dimen/x160"
+            android:layout_width="@dimen/x12"
+            android:layout_height="@dimen/y12"
+            android:layout_marginLeft="@dimen/x180"
             android:layout_marginTop="20dp"
-            android:src="@mipmap/right"/>
+            android:src="@mipmap/right" />
     </LinearLayout>
 
     <TextView
         android:layout_width="@dimen/x200"
         android:layout_height="1dp"
         android:layout_marginLeft="@dimen/x70"
-        android:background="#aaa"/>
+        android:background="#aaa" />
 
     <LinearLayout
         android:id="@+id/shouzang_mine"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:showDividers="end"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:showDividers="end">
 
         <ImageView
-            android:layout_width="@dimen/x55"
+            android:layout_width="@dimen/x15"
             android:layout_height="@dimen/y15"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
-            android:src="@mipmap/shoucang" />
+            android:src="@mipmap/my_collection" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:textSize="16dp"
+            android:layout_marginTop="18dp"
+            android:text="收藏"
+            android:layout_marginLeft="@dimen/x16"
             android:textColor="#fff"
-            android:text="收藏" />
+            android:textSize="@dimen/x16" />
 
         <ImageView
-            android:layout_width="@dimen/x10"
-            android:layout_height="@dimen/y11"
-            android:layout_marginLeft="@dimen/x160"
+            android:layout_width="@dimen/x12"
+            android:layout_height="@dimen/y12"
+            android:layout_marginLeft="@dimen/x180"
             android:layout_marginTop="20dp"
-            android:src="@mipmap/right"/>
+            android:src="@mipmap/right" />
 
     </LinearLayout>
 
@@ -127,36 +130,37 @@
         android:layout_width="@dimen/x200"
         android:layout_height="1dp"
         android:layout_marginLeft="@dimen/x70"
-        android:background="#aaa"/>
+        android:background="#aaa" />
 
     <LinearLayout
         android:id="@+id/zhuti_mine"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:showDividers="end"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:showDividers="end">
 
         <ImageView
-            android:layout_width="@dimen/x55"
+            android:layout_width="@dimen/x15"
             android:layout_height="@dimen/y15"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
-            android:src="@mipmap/zhuti" />
+            android:src="@mipmap/my_everyone" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:textSize="16dp"
+            android:layout_marginTop="18dp"
+            android:text="主题"
+            android:layout_marginLeft="@dimen/x16"
             android:textColor="#fff"
-            android:text="主题" />
+            android:textSize="@dimen/x16" />
 
         <ImageView
-            android:layout_width="@dimen/x10"
-            android:layout_height="@dimen/y11"
-            android:layout_marginLeft="@dimen/x160"
+            android:layout_width="@dimen/x12"
+            android:layout_height="@dimen/y12"
+            android:layout_marginLeft="@dimen/x180"
             android:layout_marginTop="20dp"
-            android:src="@mipmap/right"/>
+            android:src="@mipmap/right" />
 
     </LinearLayout>
 
@@ -164,6 +168,6 @@
         android:layout_width="@dimen/x200"
         android:layout_height="1dp"
         android:layout_marginLeft="@dimen/x70"
-        android:background="#aaa"/>
+        android:background="#aaa" />
 
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.example.weiying.view.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.weiying.R;
 import com.example.weiying.model.bean.SelectedBeans;
+import com.example.weiying.view.activity.DetailsActivity;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
@@ -21,6 +23,7 @@ public class SelectedRcyAdapter extends RecyclerView.Adapter {
 
     private Context context;
     private List<SelectedBeans.RetBean.ListBean.ChildListBean> listBeans;
+    private String mediaId;
 
     public SelectedRcyAdapter(Context context, List<SelectedBeans.RetBean.ListBean.ChildListBean> listBeans) {
         this.context = context;
@@ -43,6 +46,24 @@ public class SelectedRcyAdapter extends RecyclerView.Adapter {
             Uri parse = Uri.parse(pic);
             viewHolder.rcy_sdv.setImageURI(parse);
         }
+        String loadURL = listBeans.get(position).getLoadURL();
+        String[] split = loadURL.split("=");
+        for (int i = 0; i < split.length; i++) {
+            String a = split[1];
+            String[] b = a.split("&");
+            for (int j = 0; j < b.length; j++) {
+                mediaId = b[0];
+            }
+        }
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailsActivity.class);
+                intent.putExtra("mediaId", mediaId);
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override

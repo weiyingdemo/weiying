@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.weiying.R;
 import com.example.weiying.presenter.BasePresenter;
@@ -157,6 +158,8 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
                 startActivity(new Intent(MainActivity.this, CollectionActivity.class));
                 break;
             case R.id.linear_download://下载
+                Toast.makeText(this, "亲,暂时未数据!", Toast.LENGTH_SHORT).show();
+                ;
                 break;
             case R.id.linear_welfare://福利
                 startActivity(new Intent(MainActivity.this, WelfareActivity.class));
@@ -170,7 +173,7 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
                 View inflate = View.inflate(this, R.layout.dialog_advise, null);
                 alertDialog.setView(inflate);
                 TextView t = inflate.findViewById(R.id.t);
-                t.setText(Build.BRAND+Build.MODEL);
+                t.setText(Build.BRAND + Build.MODEL);
                 alertDialog.show();
 
                 break;
