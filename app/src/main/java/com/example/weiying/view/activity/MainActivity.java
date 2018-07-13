@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -26,6 +27,7 @@ import com.example.weiying.view.interfaces.IMainView;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.hjm.bottomtabbar.BottomTabBar;
 
+import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -176,6 +178,12 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
                 startActivity(new Intent(MainActivity.this, WelfareActivity.class));
                 break;
             case R.id.linear_share://分享
+                Intent shareIntent = new Intent();
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "分享成功了,哈哈!");
+                shareIntent.setType("text/plain");
+                //设置分享列表的标题，并且每次都显示分享列表
+                startActivity(Intent.createChooser(shareIntent, "分享到"));
 
                 break;
             case R.id.linear_suggest://建议

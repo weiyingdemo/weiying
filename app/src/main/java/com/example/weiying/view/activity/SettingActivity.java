@@ -3,6 +3,7 @@ package com.example.weiying.view.activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,8 @@ import com.example.weiying.R;
 import com.example.weiying.presenter.BasePresenter;
 
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SettingActivity extends BaseActivity implements View.OnClickListener {
 
@@ -39,6 +42,12 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
     private TextView dilog_close;
     private TextView dialog_tv;
     private TextView dialog_t;
+    private EditText advise_edit_email;
+    private TextView advise_text_phone;
+    private EditText advise_edit_con;
+    private Button advise_btn_voice;
+    private Button advise_btn_cancel;
+    private Button advise_btn_send;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,7 +153,47 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                 dialog.show();
                 break;
             case R.id.relative_fk://反馈
+                AlertDialog.Builder builder02 = new AlertDialog.Builder(SettingActivity.this);
+                final AlertDialog alertDialog = builder02.create();
+                View inflate = View.inflate(this, R.layout.dialog_advise, null);
+                alertDialog.setView(inflate);
+                //邮箱
+                advise_edit_email = inflate.findViewById(R.id.advise_edit_email);
+                advise_text_phone = inflate.findViewById(R.id.advise_text_phone);
+                //反馈内容
+                advise_edit_con = inflate.findViewById(R.id.advise_edit_con);
+                //录音
+                advise_btn_voice = inflate.findViewById(R.id.advise_btn_voice);
+                //取消
+                advise_btn_cancel = inflate.findViewById(R.id.advise_btn_cancel);
+                //发送
+                advise_btn_send = inflate.findViewById(R.id.advise_btn_send);
+                //点击取消按钮
+                advise_btn_cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alertDialog.dismiss();
+                    }
+                });
+                //点击发送按钮
+                advise_btn_send.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //验证邮箱输入格式
+                        String ademail = advise_edit_email.getText().toString();
+                        Pattern pattern = Pattern.compile("\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*");
+                        Matcher mc = pattern.matcher(ademail);
+                        boolean matches = mc.matches();
+                        if (matches){
+                            Toast.makeText(SettingActivity.this,"ok",Toast.LENGTH_LONG).show();
+                        }else {
+                            Toast.makeText(SettingActivity.this,"你输入的邮箱格式不正确",Toast.LENGTH_LONG).show();
+                        }
 
+                    }
+                });
+                advise_text_phone.setText("设备详情"+ Build.BRAND+Build.VERSION.RELEASE);
+                alertDialog.show();
                 break;
         }
     }

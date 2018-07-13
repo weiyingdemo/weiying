@@ -13,7 +13,7 @@
         <LinearLayout
             android:layout_width="@dimen/x200"
             android:layout_height="@dimen/y25"
-            android:background="#00f"
+            android:background="#ff00"
             android:gravity="center"
             >
 
@@ -64,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="上传屏幕截图"
-                android:textColor="#00ff00"
+                android:textColor="#ff00"
                 />
 
         </LinearLayout>
@@ -74,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="手机版本"
-            android:textColor="#00ff00"
+            android:textColor="#ff00"
             android:textSize="@dimen/y7"
             />
 
