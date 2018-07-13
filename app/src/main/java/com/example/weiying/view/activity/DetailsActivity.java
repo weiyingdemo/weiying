@@ -97,7 +97,6 @@ public class DetailsActivity extends BaseActivity<DetailsPresenter> implements I
         Log.e("==========",mediaId);
         basePresenter.detailsShow(mediaId);
 
-
     }
 
     @Override

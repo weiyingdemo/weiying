@@ -90,8 +90,6 @@ public class BrieChildAdapter extends RecyclerView.Adapter {
             brie_title = (TextView) itemView.findViewById(R.id.brie_title);
             rela = (RelativeLayout) itemView.findViewById(R.id.rela);
 
-
-
         }
     }
 

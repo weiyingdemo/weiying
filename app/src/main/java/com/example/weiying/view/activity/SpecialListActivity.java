@@ -16,6 +16,7 @@ import com.example.weiying.R;
 import com.example.weiying.model.bean.SpecialListBean;
 import com.example.weiying.presenter.BasePresenter;
 import com.example.weiying.presenter.SpecialListPresenter;
+import com.example.weiying.view.adapter.SpecialAdapter;
 import com.example.weiying.view.adapter.SpecialListAdapter;
 import com.example.weiying.view.interfaces.ISpecialListView;
 
@@ -28,6 +29,7 @@ public class SpecialListActivity extends BaseActivity<SpecialListPresenter> impl
     private RecyclerView speciallist_recycler;
     private ImageView inclu_back;
     private TextView inclu_titles;
+    String mediaid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,9 +69,26 @@ public class SpecialListActivity extends BaseActivity<SpecialListPresenter> impl
 
     @Override
     public void onSuccess(SpecialListBean.RetBean ret) {
-        List<SpecialListBean.RetBean.ListBean> list = ret.getList();
+        final List<SpecialListBean.RetBean.ListBean> list = ret.getList();
+
         SpecialListAdapter specialListAdapter = new SpecialListAdapter(this, list);
         speciallist_recycler.setAdapter(specialListAdapter);
+
+        specialListAdapter.setItemClickListener(new SpecialAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                for (int i = 0; i < list.size(); i++) {
+                    String loadURL = list.get(i).getLoadURL();
+                    String[] split = loadURL.split("=");
+                    mediaid = split[1];
+                }
+
+                Intent intent = new Intent(SpecialListActivity.this,DetailsActivity.class);
+                intent.putExtra("mediaId",mediaid);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override

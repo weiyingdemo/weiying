@@ -4,10 +4,16 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.weiying.R;
 import com.example.weiying.presenter.BasePresenter;
@@ -19,6 +25,9 @@ import com.example.weiying.view.fragment.SpecialFragment;
 import com.example.weiying.view.interfaces.IMainView;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.hjm.bottomtabbar.BottomTabBar;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainActivity extends BaseActivity implements IMainView, View.OnClickListener {
 
@@ -43,6 +52,12 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
     private TextView dialog_t;
     private TextView dialog_tv;
     private TextView dilog_close;
+    private EditText advise_edit_email;
+    private TextView advise_text_phone;
+    private EditText advise_edit_con;
+    private Button advise_btn_voice;
+    private Button advise_btn_cancel;
+    private Button advise_btn_send;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -164,13 +179,53 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
 
                 break;
             case R.id.linear_suggest://建议
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                final AlertDialog alertDialog = builder.create();
+                View inflate = View.inflate(this, R.layout.dialog_advise, null);
+                alertDialog.setView(inflate);
+                //邮箱
+                advise_edit_email = inflate.findViewById(R.id.advise_edit_email);
+                advise_text_phone = inflate.findViewById(R.id.advise_text_phone);
+                //反馈内容
+                advise_edit_con = inflate.findViewById(R.id.advise_edit_con);
+                //录音
+                advise_btn_voice = inflate.findViewById(R.id.advise_btn_voice);
+                //取消
+                advise_btn_cancel = inflate.findViewById(R.id.advise_btn_cancel);
+                //发送
+                advise_btn_send = inflate.findViewById(R.id.advise_btn_send);
+                //点击取消按钮
+                advise_btn_cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alertDialog.dismiss();
+                    }
+                });
+                //点击发送按钮
+                advise_btn_send.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //验证邮箱输入格式
+                        String ademail = advise_edit_email.getText().toString();
+                        Pattern pattern = Pattern.compile("\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*");
+                        Matcher mc = pattern.matcher(ademail);
+                        boolean matches = mc.matches();
+                        if (matches){
+                            Toast.makeText(MainActivity.this,"ok",Toast.LENGTH_LONG).show();
+                        }else {
+                            Toast.makeText(MainActivity.this,"你输入的邮箱格式不正确",Toast.LENGTH_LONG).show();
+                        }
 
+                    }
+                });
+                advise_text_phone.setText("设备详情"+Build.BRAND+Build.VERSION.RELEASE);
+
+                alertDialog.show();
                 break;
             case R.id.linear_setting://设置
                 startActivity(new Intent(MainActivity.this, SettingActivity.class));
                 break;
             case R.id.linear_theme://主题
-
                 break;
             case R.id.linear_about://关于
                 //1.创建构造器对象
@@ -207,4 +262,5 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
                 break;
         }
     }
+
 }
