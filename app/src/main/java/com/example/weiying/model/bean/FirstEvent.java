@@ -3,6 +3,11 @@ package com.example.weiying.model.bean;
 import java.util.List;
 
 public class FirstEvent {
+
+    public String mid;
+
+
+
     //简介
     public  String description ;
     //主演
@@ -11,11 +16,16 @@ public class FirstEvent {
     public  String directo;
     public List<DetailsBean.RetBean.ListBean> list;
 
-    public FirstEvent(String description, String actors, String directo, List<DetailsBean.RetBean.ListBean> list) {
+    public FirstEvent(String mid, String description, String actors, String directo, List<DetailsBean.RetBean.ListBean> list) {
+        this.mid = mid;
         this.description = description;
         this.actors = actors;
         this.directo = directo;
         this.list = list;
+    }
+
+    public void setMid(String mid) {
+        this.mid = mid;
     }
 
     public void setDescription(String description) {
@@ -32,6 +42,10 @@ public class FirstEvent {
 
     public void setList(List<DetailsBean.RetBean.ListBean> list) {
         this.list = list;
+    }
+
+    public String getMid() {
+        return mid;
     }
 
     public String getDescription() {

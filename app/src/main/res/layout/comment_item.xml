@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_marginBottom="@dimen/y10"
+        android:layout_marginTop="@dimen/y20"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y60">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/my_image_view"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/y50"
+            fresco:roundAsCircle="true"
+            android:layout_marginLeft="@dimen/x15"
+            android:layout_marginTop="@dimen/y5"
+            />
+
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/x80"
+            android:layout_marginTop="@dimen/y10"
+            android:text="phone" />
+        <TextView
+            android:id="@+id/comm_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/x80"
+            android:layout_marginTop="@dimen/y35"
+            android:text="time" />
+
+    </RelativeLayout>
+    <TextView
+        android:layout_marginStart="@dimen/x80"
+        android:text="content"
+        android:id="@+id/content_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
