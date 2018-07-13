@@ -59,7 +59,7 @@
                         android:id="@+id/selected_rcy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/y16"
+                        android:layout_marginLeft="@dimen/y13"
                         android:nestedScrollingEnabled="false"></android.support.v7.widget.RecyclerView>
                 </RelativeLayout>
 

@@ -2,13 +2,106 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:gravity="center"
+    >
 
-    <include layout="@layout/include_layout" />
+    <LinearLayout
+        android:layout_width="@dimen/x200"
+        android:layout_height="@dimen/y250"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="@dimen/x200"
+            android:layout_height="@dimen/y25"
+            android:background="#ff00"
+            android:gravity="center"
+            >
 
-    <TextView
-        android:id="@+id/t"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="反馈"
+                android:textSize="@dimen/y15"
+                android:textColor="#fff"
+                />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/advise_edit_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入您的邮箱（必填）"
+            android:textSize="@dimen/y8"
+            />
+
+        <EditText
+            android:id="@+id/advise_edit_con"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y75"
+            android:hint="请输入您的反馈..."
+            android:textSize="@dimen/y8"
+            android:background="@null"
+            />
+
+        <Button
+            android:id="@+id/advise_btn_voice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="按住录音"
+            />
+
+        <LinearLayout
+            android:layout_width="@dimen/x200"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上传屏幕截图"
+                android:textColor="#ff00"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/advise_text_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="手机版本"
+            android:textColor="#ff00"
+            android:textSize="@dimen/y7"
+            />
+
+        <LinearLayout
+            android:layout_width="@dimen/x200"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <Button
+                android:id="@+id/advise_btn_cancel"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="取消"
+                />
+
+            <Button
+                android:id="@+id/advise_btn_send"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="发送"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
 
 </LinearLayout>

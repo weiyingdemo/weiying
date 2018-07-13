@@ -14,9 +14,10 @@ import com.example.weiying.model.bean.SpecialListBean;
 
 import java.util.List;
 
-public class SpecialListAdapter extends RecyclerView.Adapter {
+public class SpecialListAdapter extends RecyclerView.Adapter implements View.OnClickListener {
     private Context context;
     private List<SpecialListBean.RetBean.ListBean> list;
+    private SpecialAdapter.OnItemClickListener mItemClickListener;
 
     public SpecialListAdapter(Context context, List<SpecialListBean.RetBean.ListBean> list) {
         this.context = context;
@@ -27,6 +28,7 @@ public class SpecialListAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View inflate = View.inflate(context, R.layout.adapter_speciallist, null);
+        inflate.setOnClickListener(this);
         return new MyViewHolder(inflate);
     }
 
@@ -36,11 +38,19 @@ public class SpecialListAdapter extends RecyclerView.Adapter {
         myViewHolder.speciallist_imgview.setScaleType(ImageView.ScaleType.FIT_XY);
         myViewHolder.speciallist_textview.setText(list.get(position).getTitle());
         Glide.with(context).load(list.get(position).getPic()).into(myViewHolder.speciallist_imgview);
+        myViewHolder.itemView.setTag(position);
     }
 
     @Override
     public int getItemCount() {
         return list.size();
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (mItemClickListener!=null){
+            mItemClickListener.onItemClick((Integer) v.getTag());
+        }
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{
@@ -54,6 +64,14 @@ public class SpecialListAdapter extends RecyclerView.Adapter {
             speciallist_imgview = itemView.findViewById(R.id.speciallist_imgview);
             speciallist_textview = itemView.findViewById(R.id.speciallist_textview);
         }
+    }
+
+    public interface OnItemClickListener{
+        void onItemClick(int position);
+    }
+
+    public void setItemClickListener(SpecialAdapter.OnItemClickListener itemClickListener) {
+        mItemClickListener = itemClickListener;
     }
 }
 

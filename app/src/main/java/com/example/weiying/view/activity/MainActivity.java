@@ -7,14 +7,17 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.os.Environment;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.color.ColorChooserDialog;
 import com.example.weiying.R;
-import com.example.weiying.ResideLayout;
 import com.example.weiying.presenter.BasePresenter;
 import com.example.weiying.view.fragment.FindFragment;
 import com.example.weiying.view.fragment.LiveBroadcastFragment;
@@ -26,6 +29,11 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.hjm.bottomtabbar.BottomTabBar;
 
 public class MainActivity extends BaseActivity implements IMainView, View.OnClickListener,ColorChooserDialog.ColorCallback {
+import java.io.File;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class MainActivity extends BaseActivity implements IMainView, View.OnClickListener {
 
     private BottomTabBar mMainBtb;
     private TextView inclu_titles;
@@ -75,6 +83,12 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
     private ResideLayout reside_layout;
     private View include_relative;
     private LinearLayout main_liner;
+    private EditText advise_edit_email;
+    private TextView advise_text_phone;
+    private EditText advise_edit_con;
+    private Button advise_btn_voice;
+    private Button advise_btn_cancel;
+    private Button advise_btn_send;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -163,7 +177,6 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
         mLinearSetting.setOnClickListener(this);
         mLinearTheme = (LinearLayout) findViewById(R.id.linear_theme);
         ;
-        main_liner = (LinearLayout) findViewById(R.id.main_liner);
         mLinearTheme.setOnClickListener(this);
         mLinearAbout = (LinearLayout) findViewById(R.id.linear_about);
         mLinearAbout.setOnClickListener(this);
@@ -200,11 +213,46 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
                 break;
             case R.id.linear_suggest://建议
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                AlertDialog alertDialog = builder.create();
+                final AlertDialog alertDialog = builder.create();
                 View inflate = View.inflate(this, R.layout.dialog_advise, null);
                 alertDialog.setView(inflate);
-                TextView t = inflate.findViewById(R.id.t);
-                t.setText(Build.BRAND + Build.MODEL);
+                //邮箱
+                advise_edit_email = inflate.findViewById(R.id.advise_edit_email);
+                advise_text_phone = inflate.findViewById(R.id.advise_text_phone);
+                //反馈内容
+                advise_edit_con = inflate.findViewById(R.id.advise_edit_con);
+                //录音
+                advise_btn_voice = inflate.findViewById(R.id.advise_btn_voice);
+                //取消
+                advise_btn_cancel = inflate.findViewById(R.id.advise_btn_cancel);
+                //发送
+                advise_btn_send = inflate.findViewById(R.id.advise_btn_send);
+                //点击取消按钮
+                advise_btn_cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alertDialog.dismiss();
+                    }
+                });
+                //点击发送按钮
+                advise_btn_send.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //验证邮箱输入格式
+                        String ademail = advise_edit_email.getText().toString();
+                        Pattern pattern = Pattern.compile("\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*");
+                        Matcher mc = pattern.matcher(ademail);
+                        boolean matches = mc.matches();
+                        if (matches){
+                            Toast.makeText(MainActivity.this,"ok",Toast.LENGTH_LONG).show();
+                        }else {
+                            Toast.makeText(MainActivity.this,"你输入的邮箱格式不正确",Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                });
+                advise_text_phone.setText("设备详情"+Build.BRAND+Build.VERSION.RELEASE);
+
                 alertDialog.show();
 
                 break;
@@ -268,4 +316,5 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
     public void onColorChooserDismissed(@NonNull ColorChooserDialog dialog) {
 
     }
+
 }
