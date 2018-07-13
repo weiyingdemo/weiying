@@ -29,7 +29,7 @@ import org.w3c.dom.Text;
 
 import java.util.List;
 
-public class SearchActivity extends BaseActivity implements View.OnClickListener,ISelectedView {
+public class SearchActivity extends BaseActivity implements View.OnClickListener, ISelectedView {
 
     /**
      * 请输入您喜欢的电影
@@ -48,6 +48,7 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
     private Intent intent;
     private TextView search;
     private MyBeansDao myBeansDao;
+    private String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,7 +135,7 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.search://搜索
-                String name = mSearchEdit.getText().toString();
+                name = mSearchEdit.getText().toString();
                 if (!name.isEmpty()) {
                     ViewGroup.MarginLayoutParams lp = new ViewGroup.MarginLayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                     lp.leftMargin = 5;
@@ -147,7 +148,30 @@ public class SearchActivity extends BaseActivity implements View.OnClickListener
                     textView.setTextSize(13);
                     //textView.setBackgroundResource(R.drawable.liushi);
                     search_myVg.addView(textView, lp);
-                    //查添加数据库
+                    List<MyBeans> list = myBeansDao.queryBuilder()
+                            .where(MyBeansDao.Properties.Id.notEq(999))
+                            .orderAsc(MyBeansDao.Properties.Id)
+                            .limit(5)
+                            .build().list();
+                    for (int i = 0; i < list.size(); i++) {
+                        MyBeans myBeans = list.get(i);
+                        String name1 = myBeans.getName();
+                        if (name1.equals(name)) {
+                            intent = new Intent(SearchActivity.this, ListActivity.class);
+                            intent.putExtra("name", name);
+                            startActivity(intent);
+                        }
+                        textView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                intent = new Intent(SearchActivity.this, ListActivity.class);
+                                intent.putExtra("name", name);
+                                startActivity(intent);
+                            }
+                        });
+                    }
+
+                    //添加数据库
                     myBeansDao.insert(new MyBeans(null, name));
                     //跳转
                     intent = new Intent(SearchActivity.this, ListActivity.class);

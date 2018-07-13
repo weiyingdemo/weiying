@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.example.weiying.R;
 import com.example.weiying.model.bean.DetailsBean;
 import com.example.weiying.model.bean.FirstEvent;
+import com.example.weiying.model.bean.TwoEvent;
 import com.example.weiying.presenter.DetailsPresenter;
 import com.example.weiying.view.fragment.BriefintroductionFragment;
 import com.example.weiying.view.fragment.CommentFragment;
@@ -48,6 +49,7 @@ public class DetailsActivity extends BaseActivity<DetailsPresenter> implements I
     private BriefintroductionFragment briefintroductionFragment;
     private CommentFragment commentFragment;
     private LinearLayout details_linea;
+    private String mediaId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +77,16 @@ public class DetailsActivity extends BaseActivity<DetailsPresenter> implements I
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
         //让tablayout和Viewpager关联;
         tabLayout.setupWithViewPager(viewPager);
+
+
+        title_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+
     }
 
     private void initfragment() {
@@ -93,8 +105,8 @@ public class DetailsActivity extends BaseActivity<DetailsPresenter> implements I
     protected void initData() {
         //获取id
         Intent intent = getIntent();
-        String mediaId = intent.getStringExtra("mediaId");
-        Log.e("==========",mediaId);
+        mediaId = intent.getStringExtra("mediaId");
+        Log.e("==========", mediaId);
         basePresenter.detailsShow(mediaId);
 
     }
@@ -140,9 +152,10 @@ public class DetailsActivity extends BaseActivity<DetailsPresenter> implements I
         String actors = ret.getActors();
         //导演
         String director = ret.getDirector();
+
         List<DetailsBean.RetBean.ListBean> list = ret.getList();
 
-        EventBus.getDefault().post(new FirstEvent(description,actors,director,list));
+        EventBus.getDefault().post(new FirstEvent(mediaId,description,actors,director,list));
 
 
     }

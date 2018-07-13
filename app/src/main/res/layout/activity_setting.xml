@@ -17,7 +17,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="99dp"
+        android:layout_marginTop="109dp"
         android:orientation="horizontal">
 
         <TextView
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="134dp"
+        android:layout_marginTop="144dp"
         android:orientation="horizontal">
 
         <TextView

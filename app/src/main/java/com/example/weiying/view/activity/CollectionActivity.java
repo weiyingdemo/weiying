@@ -14,8 +14,6 @@ import com.example.weiying.R;
 import com.example.weiying.presenter.BasePresenter;
 
 
-
-
 public class CollectionActivity extends BaseActivity implements View.OnClickListener {
 
     private RecyclerView mCollectionRcy;
@@ -39,7 +37,7 @@ public class CollectionActivity extends BaseActivity implements View.OnClickList
         inclu_back.setVisibility(View.VISIBLE);
         inclu_delete.setVisibility(View.VISIBLE);
         //设置布局管理器
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(CollectionActivity.this,3);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(CollectionActivity.this, 3);
         mCollectionRcy.setLayoutManager(gridLayoutManager);
     }
 
@@ -55,6 +53,7 @@ public class CollectionActivity extends BaseActivity implements View.OnClickList
         inclu_delete = findViewById(R.id.inclu_delete);
         inclu_titles = findViewById(R.id.inclu_titles);
         inclu_titles.setText("收藏");
+        inclu_delete.setText("清除");
         inclu_back.setOnClickListener(this);
         inclu_delete.setOnClickListener(this);
     }
@@ -65,7 +64,7 @@ public class CollectionActivity extends BaseActivity implements View.OnClickList
             case R.id.inclu_back://返回
                 finish();
                 break;
-            case R.id.inclu_delete://删除
+            case R.id.inclu_delete://清除
 
                 break;
         }

@@ -31,16 +31,11 @@
         <activity android:name=".view.activity.CollectionActivity" />
         <activity android:name=".view.activity.SearchActivity" />
         <activity android:name=".view.activity.ListActivity" />
-        <activity android:name=".view.activity.WelfareActivity"></activity>
-        <activity android:name=".view.activity.DetailsActivity"
-
-            android:configChanges="orientation|screenSize|keyboardHidden"
-            android:screenOrientation="portrait"
-            ></activity>
-        <activity android:name=".view.activity.SpecialListActivity"></activity>
-
-        <activity android:name=".view.activity.SettingActivity" />
-        <activity android:name=".view.activity.WebViewActivity"></activity>
+        <activity android:name=".view.activity.WelfareActivity" />
+        <activity android:name=".view.activity.DetailsActivity" />
+        <activity android:name=".view.activity.SetupActivity"/>
+        <activity android:name=".view.activity.SpecialListActivity" />
+        <activity android:name=".view.activity.SettingActivity"></activity>
     </application>
 
 </manifest>

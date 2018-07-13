@@ -46,7 +46,7 @@
             android:id="@+id/search_myVg"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/y50"
-            android:layout_marginLeft="35dp"></com.example.weiying.MyViewGroup>
+            android:layout_marginLeft="@dimen/x12"></com.example.weiying.MyViewGroup>
     </LinearLayout>
 
     <TextView
