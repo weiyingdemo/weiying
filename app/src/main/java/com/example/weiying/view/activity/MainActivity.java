@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Log;
@@ -16,7 +17,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.color.ColorChooserDialog;
 import com.example.weiying.R;
+import com.example.weiying.ResideLayout;
 import com.example.weiying.presenter.BasePresenter;
 import com.example.weiying.view.fragment.FindFragment;
 import com.example.weiying.view.fragment.LiveBroadcastFragment;
@@ -27,11 +30,12 @@ import com.example.weiying.view.interfaces.IMainView;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.hjm.bottomtabbar.BottomTabBar;
 
-import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MainActivity extends BaseActivity implements IMainView, View.OnClickListener {
+
+
+public class MainActivity extends BaseActivity implements IMainView, View.OnClickListener, ColorChooserDialog.ColorCallback {
 
     private BottomTabBar mMainBtb;
     private TextView inclu_titles;
@@ -54,6 +58,33 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
     private TextView dialog_t;
     private TextView dialog_tv;
     private TextView dilog_close;
+    private int[]
+    primary = new int[]{
+
+        Color.parseColor("#F44336"),
+                Color.parseColor("#FF0000"),
+                Color.parseColor("#FFFF00"),
+                Color.parseColor("#00FF00"),
+                Color.parseColor("#0000FF"),
+                Color.parseColor("#00FFFF"),
+                Color.parseColor("#FF00FF"),
+                Color.parseColor("#ff6600"),
+                Color.parseColor("#ff9966"),
+                Color.parseColor("#cc0000"),
+                Color.parseColor("#993399"),
+                Color.parseColor("#cc6699"),
+                Color.parseColor("#ffccff"),
+                Color.parseColor("#cc66cc"),
+                Color.parseColor("#cc33cc"),
+                Color.parseColor("#00ff33"),
+                Color.parseColor("#3399cc"),
+                Color.parseColor("#0066ff"),
+                Color.parseColor("#0099ff"),
+                Color.parseColor("#00cc99"),
+    };
+    private ResideLayout reside_layout;
+    private View include_relative;
+    private LinearLayout main_liner;
     private EditText advise_edit_email;
     private TextView advise_text_phone;
     private EditText advise_edit_con;
@@ -124,12 +155,14 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
 
     @Override
     protected void initView() {
+
+         main_liner = findViewById(R.id.main_liner);
         inclu_titles = findViewById(R.id.inclu_titles);
         mMainBtb = (BottomTabBar) findViewById(R.id.main_btb);
         main_sdv = findViewById(R.id.main_sdv);
         main_name = findViewById(R.id.main_name);
-
-
+        reside_layout = (ResideLayout)findViewById(R.id.reside_layout);
+        include_relative = findViewById(R.id.include_relative);
         mMainSdv = (SimpleDraweeView) findViewById(R.id.main_sdv);
         mMainSdv.setOnClickListener(this);
         mMainName = (TextView) findViewById(R.id.main_name);
@@ -173,17 +206,13 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
                 startActivity(new Intent(MainActivity.this, CollectionActivity.class));
                 break;
             case R.id.linear_download://下载
+                Toast.makeText(this, "亲,暂时未数据!", Toast.LENGTH_SHORT).show();
+                ;
                 break;
             case R.id.linear_welfare://福利
                 startActivity(new Intent(MainActivity.this, WelfareActivity.class));
                 break;
             case R.id.linear_share://分享
-                Intent shareIntent = new Intent();
-                shareIntent.setAction(Intent.ACTION_SEND);
-                shareIntent.putExtra(Intent.EXTRA_TEXT, "分享成功了,哈哈!");
-                shareIntent.setType("text/plain");
-                //设置分享列表的标题，并且每次都显示分享列表
-                startActivity(Intent.createChooser(shareIntent, "分享到"));
 
                 break;
             case R.id.linear_suggest://建议
@@ -229,11 +258,20 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
                 advise_text_phone.setText("设备详情"+Build.BRAND+Build.VERSION.RELEASE);
 
                 alertDialog.show();
+
                 break;
             case R.id.linear_setting://设置
                 startActivity(new Intent(MainActivity.this, SettingActivity.class));
                 break;
             case R.id.linear_theme://主题
+                new ColorChooserDialog.Builder(MainActivity.this, R.string.color_palette)
+                        .accentMode(true)//
+                        .customColors(primary, null)//两个颜色数组
+                        .dynamicButtonColor(true)//动态按钮颜色
+                        .customButton(0)//设置颜色不显示
+                        .cancelButton(R.string.cancle)
+                        .doneButton(R.string.done)
+                        .show(MainActivity.this);//传入上下文
                 break;
             case R.id.linear_about://关于
                 //1.创建构造器对象
@@ -269,6 +307,18 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
                 dialog.show();
                 break;
         }
+    }
+
+    @Override
+    public void onColorSelection(@NonNull ColorChooserDialog dialog, int selectedColor) {
+        reside_layout.setBackgroundColor(selectedColor);
+        include_relative.setBackgroundColor(selectedColor);
+        main_liner.setBackgroundColor(selectedColor);
+    }
+
+    @Override
+    public void onColorChooserDismissed(@NonNull ColorChooserDialog dialog) {
+
     }
 
 }
