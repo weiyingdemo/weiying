@@ -1,6 +1,8 @@
 package com.example.weiying.view.fragment;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -92,6 +94,11 @@ public class MineFragment extends Fragment  implements ColorChooserDialog.ColorC
     @Override
     public void onColorSelection(@NonNull ColorChooserDialog dialog, int selectedColor) {
         linaer_min.setBackgroundColor(selectedColor);
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("register_user", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.putInt("selectedColor",selectedColor);
+        edit.putBoolean("islogin",true);
+        edit.commit();
     }
 
     @Override

@@ -1,7 +1,9 @@
 package com.example.weiying.view.activity;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
@@ -95,8 +97,18 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences sharedPreferences = getSharedPreferences("register_user", Context.MODE_PRIVATE);
+        boolean islogin = sharedPreferences.getBoolean("islogin", false);
+        if(islogin){
+            int selectedColor = sharedPreferences.getInt("selectedColor", 0);
+            reside_layout.setBackgroundColor(selectedColor);
+            include_relative.setBackgroundColor(selectedColor);
+            main_liner.setBackgroundColor(selectedColor);
+        }
 
     }
+
+
 
     @Override
     protected int setLayout() {
@@ -314,6 +326,14 @@ public class MainActivity extends BaseActivity implements IMainView, View.OnClic
         reside_layout.setBackgroundColor(selectedColor);
         include_relative.setBackgroundColor(selectedColor);
         main_liner.setBackgroundColor(selectedColor);
+        SharedPreferences sharedPreferences = getSharedPreferences("register_user", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.putInt("selectedColor",selectedColor);
+        edit.putBoolean("islogin",true);
+        edit.commit();
+
+
+
     }
 
     @Override
